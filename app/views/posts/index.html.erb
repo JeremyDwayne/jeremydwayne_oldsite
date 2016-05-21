@@ -1,17 +1,29 @@
-<div class="container">
-  <p id="notice"><%= notice %></p>
-  <h1>Posts</h1>
+<section class="post_list">
+  <div class="wrapper">
+    <p id="notice"><%= notice %></p>
+    <%= link_to 'New Post', new_post_path, class: "btn" %>
+    <br/>
+    <br/>
 
+    <div class="post_row">
       <% @posts.each do |post| %>
-          <%= post.title %>
-          <%= post.content %>
+        <div class="post">
+          <div style="background-image: url(bannerimg.jpg)" class="post_image">
+          <%# <%= image_tag 'bannerimg.jpg', class: "post_image" %1> %>
+
+            <span class="post_title"><%= post.title.truncate(95) %></span><br/>
+          </div>
+          <i class="post_date"><%= post.created_at.strftime("%b #{post.created_at.day.ordinalize}, %Y %I:%M%p") %><%= " | Updated At: " + post.updated_at.strftime("%b #{post.updated_at.day.ordinalize}, %Y %I:%M%p") if post.updated_at != post.created_at %></i><br><br>
+          <span class="post_content"><%= post.content.html_safe %></span><br/>
+          Share: <i class="fa fa-twitter"></i><i class="fa fa-facebook"></i><i class="fa fa-google-plus"></i><br/>
+          <%= link_to "Continue...", post, class: "btn" %>
           <%# <% if admin_signed_in? %1> %>
-          <%#   <%= link_to 'Show', post %1> %>
-          <%#   <%= link_to 'Edit', edit_post_path(post) %1> %>
+            <%#   <%= link_to 'Show', post %1> %>
+            <%#   <%= link_to 'Edit', edit_post_path(post) %1> %>
           <%# <% end %1> %>
-      <% end %>
-
-  <br>
-
-  <%= link_to 'New Post', new_post_path %>
-</div>
+      </div>
+    <% end %>
+    </div>
+    <br>
+  </div>
+</section>

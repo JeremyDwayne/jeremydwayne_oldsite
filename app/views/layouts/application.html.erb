@@ -5,7 +5,6 @@
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= stylesheet_link_tag "https://cdnjs.cloudflare.com/ajax/libs/normalize/4.1.1/normalize.min.css" %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <%= stylesheet_link_tag "https://maxcdn.bootstrapcdn.com/font-awesome/4.6.2/css/font-awesome.min.css"%>
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -13,34 +12,27 @@
 
   <body>
     <header id="main_header">
-      <div class="banner_image">
-        <div class="container">
-
-          <div class="navbar">
-            <span class="logo"><a href="/"><b>[</b>Jeremy Winterberg<b>]</b></a></span>
-            <a href="#" class="menu"><i class="fa fa-bars"></i></a>
-            <nav id="main_nav"> 
-              <ul>
-                <li><%= link_to 'Home', root_path, class: active_class(root_path) %></li>
-                <li><%= link_to 'Blog', posts_path, class: active_class(posts_path) %></li>
-                <li><%= link_to 'Portfolio', projects_path, class: active_class(projects_path) %></li>
-                <li><%= link_to 'Resume', resume_path, class: active_class(resume_path) %></li>
-              </ul>
-            </nav>
-          </div>
-
-        </div>
+      <div class="navbar">
+        <span class="logo"><a href="/"><b>[</b>Jeremy Winterberg<b>]</b></a></span>
+        <nav id="main_nav"> 
+          <ul>
+            <li><%= link_to 'Home', root_path, class: active_class(root_path) %></li>
+            <li><%= link_to 'Blog', posts_path, class: active_class(posts_path) %></li>
+            <li><%= link_to 'Portfolio', projects_path, class: active_class(projects_path) %></li>
+            <li><%= link_to 'Resume', resume_path, class: active_class(resume_path) %></li>
+          </ul>
+        </nav>
       </div>
     </header>
 
     <main id="main_main">
-      <%= yield %>
+    <%= yield %>
     </main>
 
     <footer id="main_footer">
-      <div class="container">
+      <div class="wrapper">
         <div id="copyright">
-        Copyright 2016 JeremyDwayne
+          &copy;<%= Time.now.year %> <span class="logo"><a href="/"><b>[</b>Jeremy Winterberg<b>]</b></a></span>
         </div>
         <div id="footer_links">
           <a href="http://www.github.com/jeremydwayne"><i class="fa fa-github"></i></a>

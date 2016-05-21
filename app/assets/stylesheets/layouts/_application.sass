@@ -1,0 +1,184 @@
+@import url(https://fonts.googleapis.com/css?family=Droid+Sans:400,700)
+
+@font-face
+  font-family: Norwester
+  src: url(norwester/norwester.eot)
+  src: url(norwester/norwester.svg)
+  src: url(norwester/norwester.ttf)
+  src: url(norwester/norwester.woff)
+
+$mobile: new-breakpoint(max-width 480px 4)
+
+* 
+  box-sizing: border-box
+
+html, body
+  display: flex
+  min-height: 100vh
+  flex-direction: column
+  font-family: 'Droid Sans', sans-serif
+
+.wrapper
+  +outer-container
+
+.logo 
+  a 
+    font-family: "Norwester"
+    font-size: 2.5rem
+    color: white
+    text-decoration: none
+    b 
+      font-weight: 700
+      font-size: 1.25em
+      color: $secondary
+
+header#main_header
+  position: relative
+  background: image-url('bannerimg.jpg')
+  min-height: 500px
+  +media($mobile)
+    min-height: 300px
+  background-position: center
+  background-size: cover
+  box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12)
+  .navbar 
+    +outer-container
+    .logo 
+      +span-columns(4)
+      +media($mobile)
+        +span-columns(4)
+        text-align: center
+        bottom: 6em
+        a
+          font-size: 1.75em
+      position: absolute
+      bottom: 30px
+      float: left
+    #main_nav 
+      +media($mobile)
+        +span-columns(4)
+        clear: both
+        ul
+          +span-columns(4)
+          text-align: center
+          li
+            padding: 0 .5em
+            a 
+              display: block
+              font-size: .8em
+              &.active
+                padding-bottom: 0
+                border-bottom: 4px solid $secondary
+      +span-columns(4.2)
+      float: right
+      ul 
+        position: absolute
+        bottom: 30px
+        list-style: none
+        li 
+          position: relative
+          display: inline-block
+          font-size: 1.5em
+          a 
+            color: white
+            text-decoration: none
+            background: none
+            padding: 5px
+            display: block
+            &:hover
+              border-bottom: 4px solid $secondary
+            &.active 
+              border-bottom: 4px solid $secondary
+
+.menu 
+  display: none
+  +media($mobile)
+    +span-columns(1)
+    float: right
+    i 
+      position: absolute
+      bottom: 42px
+      right: 1.3em
+      font-size: 1.5rem
+      color: white
+
+#main_main 
+  margin-top: 20px
+  flex: 1 0 auto
+
+#main_footer 
+  width: 100%
+  padding-top: 30px
+  color: white
+  height: 80px
+  +media($mobile)
+    height: 120px
+  background-color: $main
+  #copyright 
+    +span-columns(3)
+    +media($mobile)
+      +span-columns(3.85)
+      text-align: center
+    font-size: 1em
+    float: left
+    .logo 
+      a 
+        font-family: "Norwester"
+        font-size: 1rem
+        color: white
+        text-decoration: none
+        b 
+          font-weight: 700
+          font-size: 1.25em
+          color: $secondary
+  #footer_links 
+    float: right
+    +media($mobile)
+      +span-columns(3.85)
+      text-align: center
+    a 
+      font-size: 1.75em
+      margin-left: .3em
+      color: $highlight
+      &:hover
+        color: $secondary
+        background: none
+
+input[type="text"], input[type="email"] 
+  +media($mobile)
+    width: 100%
+    margin: 2px 0 2px 0
+    float: none
+  height: 36px
+  width: 25%
+  padding: 2px
+  margin: 0 2px 0 2px
+  line-height: 36px
+  float: left
+  vertical-align: middle
+  &:focus
+    outline: 2px solid $highlight
+
+input.btn, a.btn 
+  background-color: $highlight
+  border-radius: 2px
+  border: none
+  box-shadow: 0px 9px 7px -5px rgba(0,0,0,0.2)
+  color: white
+  display: inline-block
+  height: 36px
+  letter-spacing: .5px
+  line-height: 36px
+  outline: 0
+  overflow: hidden
+  padding: 0 2rem
+  position: relative
+  text-align: center
+  text-decoration: none
+  text-transform: uppercase
+  vertical-align: middle
+  transition: all ease-in-out 300ms
+  &:hover
+    box-shadow: 0px 12px 14px -8px rgba(0,0,0,0.1)
+    transform: translate(0px, -1px) scale(1.02)
+    background-color: tint($highlight, 15%)

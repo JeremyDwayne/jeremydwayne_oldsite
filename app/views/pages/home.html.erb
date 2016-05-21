@@ -1,36 +1,34 @@
-<section class="featured_content">
-  <div class="container">
-    <div class="row">
-      <div class="col">
-        <h3>Blog</h3>
-        <p>Occasionally I surprise everyone with thoughts actually worth sharing. Follow my blog if you somehow think I'm interesting!</p>
-        <%= link_to "All Articles", posts_path, class: "btn" %>
+<section id="featured_content">
+  <div class="wrapper">
+    <div class="col">
+      <h3>Blog</h3>
+      <p>Occasionally I surprise everyone with thoughts actually worth sharing. Follow my blog if you somehow think I'm interesting!</p>
+      <%= link_to "All Articles", posts_path, class: "btn" %>
     </div>
 
     <div class="col">
       <h3>Portfolio</h3>
       <p>I'm always working on side projects and the occasional freelance gig. When I do something worth sharing (that I'm able to), you'll find it in my portfolio.</p>
       <%= link_to "All Projects", projects_path, class: "btn" %>
-  </div>
+    </div>
 
-  <div class="col">
-    <h3>Social Media</h3>
-    <p>I'm a fairly social person! Please follow and interact with me on the following communities.
+    <div class="col">
+      <h3>Social Media</h3>
+      <p>I'm a fairly social person! Please follow and interact with me on the following communities.
       <ul class="no-style-ul">
-        <li><a href="http://www.twitch.tv/jeremydwayne"><i class="fa fa-twitch"></i> twitch.tv/jeremydwayne</a></li>
-        <li><a href="http://www.github.com/jeremydwayne"><i class="fa fa-github"></i> github.com/jeremydwayne</a></li>
-        <li><a href="http://www.twitter.com/jeremydwayne"><i class="fa fa-twitter"></i> twitter.com/jeremydwayne</a></li>
-        <li><a href="http://www.instagram.com/jeremydwayne"><i class="fa fa-instagram"></i> instagram.com/jeremydwayne</a></li>
-        <li><a href="http://www.youtube.com/jeremydwayneirl"><i class="fa fa-youtube"></i> youtube.com/jeremydwayneirl</a></li>
+        <li><a href="http://www.twitch.tv/jeremydwayne"><i class="fa fa-twitch"></i> /jeremydwayne</a></li>
+        <li><a href="http://www.github.com/jeremydwayne"><i class="fa fa-github"></i> /jeremydwayne</a></li>
+        <li><a href="http://www.twitter.com/jeremydwayne"><i class="fa fa-twitter"></i> @jeremydwayne</a></li>
+        <li><a href="http://www.instagram.com/jeremydwayne"><i class="fa fa-instagram"></i> @jeremydwayne</a></li>
+        <li><a href="http://www.youtube.com/jeremydwayneirl"><i class="fa fa-youtube"></i> /jeremydwayneirl</a></li>
       </ul>
-    </p>
-  </div>
+      </p>
     </div>
   </div>
 </section>
 
 <section id="bio">
-  <div class="container">
+  <div class="wrapper">
     <%= image_tag 'avatar.jpg' %>
     <p><span>Nerd</span>. The one word to best describe myself. I strive to learn new things every day to grow as a person. Whether that be technology, science, medicine, engineering, or even gaming.</p>
     <p>I'm a <span>coffee addicted</span>, <span>sleep deprived</span>, and <span>competitive</span> person. The goal behind this website is to continue learning and share as much as I can down the paths of all things programming and design. If you're interested in hiring me, checkout my resume and portfolio!</p>
@@ -38,13 +36,14 @@
     <p>Taker 'r Easy</p>
     <p><b>Jer</b></p>
     <%= link_to "Learn More", resume_path, class: "btn" %>
-</div>
+  </div>
 </section>
 
 <section id="email_subscribe">
-  <div class="container">
+  <div class="wrapper">
     <h2>Mailing List</h4>
     <p>Join my mailing list for notifications of cool videos, articles, and.. who am I kidding, you dont want to sign up for this.</p>
-    <input type="text" name="name" placeholder="Your Name">&nbsp;<input type="email" name="email" placeholder="Email Address">&nbsp;<input type="submit" value="Submit" class="btn">
+    <%# <input type="text" name="name" placeholder="Your Name">&nbsp;<input type="email" name="email" placeholder="Email Address">&nbsp;<input type="submit" value="Submit" class="btn"> %>
+    <%= render 'newsletter_form' %>
   </div>
 </section>
