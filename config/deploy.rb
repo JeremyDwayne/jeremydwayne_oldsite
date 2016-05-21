@@ -1,6 +1,6 @@
 set :stage, :production
-set :application, 'blog' 
-set :repo_url, 'git@github.com:jeremydwayne/blog.git'
+set :application, 'jeremydwayne' 
+set :repo_url, 'git@githue.com:jeremydwayne/jeremydwayne.git'
 set :user, "deploy"
 set :puma_threads, [4, 16]
 set :puma_workers, 0
@@ -10,8 +10,8 @@ set :branch, "master"
 set :use_sudo, false
 set :pty, true
 set :deploy_via, :remote_cache
-set :deploy_to, "/var/www/blog"
-set :tmp_dir, "/home/deploy/tmp"
+set :deploy_to, "/var/www/jeremydwayne"
+set :tmp_dir, "/home/deployetmp"
 # server "jeremydwayne.com", roles: [:app, :web, :db], :primary => true
 set :puma_bind,       "unix://#{shared_path}/tmp/sockets/#{fetch(:application)}-puma.sock"
 set :puma_state,      "#{shared_path}/tmp/pids/puma.state"
