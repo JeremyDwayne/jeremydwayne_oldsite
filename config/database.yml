@@ -14,7 +14,7 @@ test:
 
 production:
   database: jeremydwayne_production
-  username: jeremydwayne
+  username: deploy
   adapter: postgresql
   host: jeremydwayne.com
   port: 5432
