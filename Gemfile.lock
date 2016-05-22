@@ -69,11 +69,12 @@ GEM
       capistrano (~> 3.1)
       sshkit (~> 1.2)
     capistrano-harrow (0.5.1)
-    capistrano-puma (0.2.3)
-      capistrano (>= 3.0)
     capistrano-rails (1.1.6)
       capistrano (~> 3.1)
       capistrano-bundler (~> 1.1)
+    capistrano3-puma (1.2.1)
+      capistrano (~> 3.0)
+      puma (>= 2.6)
     coffee-rails (4.1.1)
       coffee-script (>= 2.2.0)
       railties (>= 4.0.0, < 5.1.x)
@@ -244,9 +245,9 @@ DEPENDENCIES
   byebug
   capistrano (~> 3.1)
   capistrano-bundler (~> 1.1.2)
-  capistrano-puma
   capistrano-rails (~> 1.1)
   capistrano-rvm!
+  capistrano3-puma
   coffee-rails (~> 4.1.0)
   devise
   friendly_id (~> 5.1)
