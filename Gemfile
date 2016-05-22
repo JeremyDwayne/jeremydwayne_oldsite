@@ -18,6 +18,7 @@ gem 'jbuilder', '~> 2.0'
 gem 'pygments.rb'
 gem 'redcarpet'
 gem 'devise'
+gem 'pundit'
 gem 'friendly_id', '~> 5.1'
 gem 'kaminari'
 # Use Redis adapter to run Action Cable in production

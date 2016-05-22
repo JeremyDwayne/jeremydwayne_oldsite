@@ -17,10 +17,10 @@
           <span class="post_content"><%= post.content.html_safe %></span><br/>
           Share: <i class="fa fa-twitter"></i><i class="fa fa-facebook"></i><i class="fa fa-google-plus"></i><br/>
           <%= link_to "Continue...", post, class: "btn" %>
-          <%# <% if admin_signed_in? %1> %>
-            <%#   <%= link_to 'Show', post %1> %>
-            <%#   <%= link_to 'Edit', edit_post_path(post) %1> %>
-          <%# <% end %1> %>
+          <% if user_is_admin? %>
+              <%= link_to 'Show', post %>
+              <%= link_to 'Edit', edit_post_path(post) %>
+          <% end %>
       </div>
     <% end %>
     </div>
