@@ -1,11 +1,15 @@
 class UsersController < ApplicationController
   before_filter :authenticate_user!
   before_action :set_user, only: [:show, :update, :destroy]
+  before_action :one_user?, only: [:new, :create]
   after_action :verify_authorized
 
   def index
     @users = User.all
     authorize User
+  end
+
+  def new
   end
 
   def show
@@ -28,6 +32,14 @@ class UsersController < ApplicationController
   end
 
   private
+
+    def one_user?
+      if (User.count == 1) & (user_signed_in?)
+        redirect_to root_path
+      elsif User.count == 1
+        redirect_to new_user_session_path
+      end
+    end
 
     def set_user
       @user = User.find(params[:id])

@@ -32,10 +32,14 @@ module ApplicationHelper
     Redcarpet::Markdown.new(renderer, options).render(content).html_safe
   end
 
-  def link_if_admin(text, path)
+  def link_if_admin(text, path, css="")
     if user_signed_in? && current_user.admin?
-        link_to text, path
+        link_to text, path, class: css
     end
+  end
+
+  def html_dash_replace(string)
+    string.gsub("-", "%")
   end
 
 end

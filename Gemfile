@@ -21,6 +21,7 @@ gem 'devise'
 gem 'pundit'
 gem 'friendly_id', '~> 5.1'
 gem 'kaminari'
+gem 'social-share-button'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
@@ -42,7 +43,6 @@ group :development do
   gem 'listen', '~> 3.0.5'
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
-  gem 'rspec-rails'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

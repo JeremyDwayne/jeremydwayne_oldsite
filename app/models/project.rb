@@ -1,2 +1,8 @@
 class Project < ApplicationRecord
+  extend FriendlyId
+  friendly_id :title, use: :slugged
+
+  def normalize_friendly_id(string)
+    super[0..139]
+  end
 end

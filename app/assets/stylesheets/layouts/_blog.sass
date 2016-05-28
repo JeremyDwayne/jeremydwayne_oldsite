@@ -3,11 +3,15 @@
   padding: 1em 1em
   background: $main
   min-height: calc(100vh - 580px)
+  a
+    margin: .5%
+    +media($mobile)
+      margin: 2%
 
 .post_row
   .post
     +media($mobile)
-      +span-columns(4)
+      +span-columns(3.85)
       margin: 2%
       min-height: 35em
     +span-columns(12)

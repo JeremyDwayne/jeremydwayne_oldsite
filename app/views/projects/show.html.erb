@@ -8,7 +8,9 @@
   <p>
     <%= markdown(@project.content) %>
   </p>
-
+  <br/>
+  Share: <%= social_share_button_tag(@project.title, url: post_url(@project), popup: true) %>
+  <br/>
   <%= link_if_admin 'Edit |', edit_project_path(@project) %>
   <%= link_to 'Back', projects_path %>
 </div>

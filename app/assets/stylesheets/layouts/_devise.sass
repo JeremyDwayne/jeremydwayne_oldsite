@@ -1,6 +1,5 @@
 .devise_wrapper
   @extend .wrapper
-  +omega
   text-align: left
   +media($mobile)
     margin: 1em
@@ -11,9 +10,18 @@
     +span-columns(6)
     input[type="email"], input[type="password"]
       width: 100%
+  input[type="submit"]
+    margin: 2em 0
+  #user_remember_me
+    margin: 1em 0
+    display: inline
+  #user_remember_me_label
+    margin: 1em 0
+    display: inline
 
 .actions, .form_links
   +media($mobile)
     +span-columns(4)
   +span-columns(12)
   width: 100%
+  margin-bottom: 1em
