@@ -27,6 +27,9 @@
     </header>
 
     <main id="main_main">
+    <% flash.each do |message_type, message| %>
+      <div id="flash" class="flash-<%= message_type %>"><%= message %></div>
+    <% end %>
     <%= yield %>
     </main>
 
@@ -35,12 +38,20 @@
         <div id="copyright">
           &copy;<%= Time.now.year %> <span class="logo"><a href="/"><b>[</b>Jeremy Winterberg<b>]</b></a></span>
         </div>
+        <div id="user_login">
+          <% if user_signed_in? %>
+            <li><%= link_to "Log out", destroy_user_session_path, method: "delete" %></li>
+          <% else %>
+            <li><%= link_to "Log in", new_user_session_path %></li>
+          <% end %>
+        </div>
         <div id="footer_links">
-          <a href="http://www.github.com/jeremydwayne"><i class="fa fa-github"></i></a>
-          <a href="http://www.twitter.com/jeremydwayne"><i class="fa fa-twitter"></i></a>
-          <a href="http://www.instagram.com/jeremydwayne"><i class="fa fa-instagram"></i></a>
-          <a href="http://www.twitch.tv/jeremydwayne"><i class="fa fa-twitch"></i></a>
-          <a href="http://www.youtube.com/jeremydwayneirl"><i class="fa fa-youtube"></i></a>
+          <a href="http://www.github.com/jeremydwayne" target="_blank"><i class="fa fa-github"></i></a>
+          <a href="https://www.linkedin.com/in/jeremywinterberg" target="_blank"><i class="fa fa-linkedin"></i></a>
+          <a href="http://www.twitter.com/jeremydwayne" target="_blank"><i class="fa fa-twitter"></i></a>
+          <a href="http://www.instagram.com/jeremydwayne" target="_blank"><i class="fa fa-instagram"></i></a>
+          <a href="http://www.twitch.tv/jeremydwayne" target="_blank"><i class="fa fa-twitch"></i></a>
+          <a href="http://www.youtube.com/jeremydwayneirl" target="_blank"><i class="fa fa-youtube"></i></a>
         </div>
       </div>
     </footer>

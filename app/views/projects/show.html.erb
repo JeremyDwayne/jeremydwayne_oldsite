@@ -1,19 +1,14 @@
-<p id="notice"><%= notice %></p>
+<div class="wrapper">
+  <div id="post_image"><h2><%= @project.title %></h2></div>
+  <p>
+    <strong>Url:</strong>
+    <%= link_to @project.url %>
+  </p>
 
-<p>
-  <strong>Title:</strong>
-  <%= @project.title %>
-</p>
+  <p>
+    <%= markdown(@project.content) %>
+  </p>
 
-<p>
-  <strong>Content:</strong>
-  <%= @project.content %>
-</p>
-
-<p>
-  <strong>Url:</strong>
-  <%= @project.url %>
-</p>
-
-<%= link_to 'Edit', edit_project_path(@project) %> |
-<%= link_to 'Back', projects_path %>
+  <%= link_if_admin 'Edit |', edit_project_path(@project) %>
+  <%= link_to 'Back', projects_path %>
+</div>

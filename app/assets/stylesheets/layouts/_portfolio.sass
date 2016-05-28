@@ -1,3 +1,32 @@
-// Place all the styles related to the Projects controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.portfolio_list 
+  margin: -20px auto auto auto
+  padding: 1em 1em
+  background: $main
+  min-height: calc(100vh - 580px)
+
+.portfolio_row
+  .project
+    +media($mobile)
+      +span-columns(4)
+      margin: 2%
+      min-height: 35em
+    +span-columns(12)
+    +outer-container
+    padding: 2em
+    margin: .5%
+    min-height: 10em
+    height: 100%
+    background: white
+    border-radius: 2px
+    border: none
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12)
+    position: relative
+    span.project_title
+      font-size: 1.5em
+      font-weight: 700
+      color: $main
+      +media($mobile)
+        font-size: 1.2em
+    .fa
+      color: $highlight
+      padding: 5px

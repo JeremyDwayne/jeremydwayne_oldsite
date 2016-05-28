@@ -1,31 +1,30 @@
-<p id="notice"><%= notice %></p>
-
-<h1>Projects</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Content</th>
-      <th>Url</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @projects.each do |project| %>
-      <tr>
-        <td><%= project.title %></td>
-        <td><%= project.content %></td>
-        <td><%= project.url %></td>
-        <td><%= link_to 'Show', project %></td>
-        <td><%= link_to 'Edit', edit_project_path(project) %></td>
-        <td><%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+<section class="portfolio_list">
+  <div class="wrapper">
+    <% if user_signed_in? %>
+      <% if current_user.admin? %> 
+        <%= link_to 'New Project', new_project_path, class: "btn" %>
+      <% end %>
     <% end %>
-  </tbody>
-</table>
+    <br/>
+    <br/>
+    <div class="portfolio_row">
+      <% @projects.each do |project| %>
+        <div class="project">
+          <%# <div style="background-image: url(bannerimg.jpg)" class="project_image"> %>
+          <%# <%= image_tag 'bannerimg.jpg', class: "project_image" %1> %>
 
-<br>
-
-<%= link_to 'New Project', new_project_path %>
+            <span class="project_title"><%= project.title %></span><br/>
+          <%# </div> %>
+          <i class="project_date"><%= project.created_at.strftime("%b #{project.created_at.day.ordinalize}, %Y %I:%M%p") %><%= " | Updated At: " + project.updated_at.strftime("%b #{project.updated_at.day.ordinalize}, %Y %I:%M%p") if project.updated_at != project.created_at %></i><br><br>
+          <span class="project_content"><%= markdown(project.content) %></span><br/>
+          <br/>
+          Share: <i class="fa fa-twitter"></i><i class="fa fa-facebook"></i><i class="fa fa-google-plus"></i><br/>
+          <br/>
+          <%= link_to "Permalink", project %>
+          <%= link_if_admin '| Edit', edit_project_path(project) %>
+      </div>
+    <% end %>
+    </div>
+    <br>
+  </div>
+</section>

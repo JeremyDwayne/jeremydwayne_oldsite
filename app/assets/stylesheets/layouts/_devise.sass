@@ -1,0 +1,19 @@
+.devise_wrapper
+  @extend .wrapper
+  +omega
+  text-align: left
+  +media($mobile)
+    margin: 1em
+.devise_form
+  .field
+    +media($mobile)
+      +span-columns(4)
+    +span-columns(6)
+    input[type="email"], input[type="password"]
+      width: 100%
+
+.actions, .form_links
+  +media($mobile)
+    +span-columns(4)
+  +span-columns(12)
+  width: 100%

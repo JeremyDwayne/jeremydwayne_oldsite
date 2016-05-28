@@ -1,26 +1,27 @@
 <section class="post_list">
   <div class="wrapper">
-    <p id="notice"><%= notice %></p>
-    <%= link_to 'New Post', new_post_path, class: "btn" %>
+    <% if user_signed_in? %>
+      <% if current_user.admin? %> 
+        <%= link_to 'New Post', new_post_path, class: "btn" %>
+      <% end %>
+    <% end %>
     <br/>
     <br/>
-
     <div class="post_row">
       <% @posts.each do |post| %>
         <div class="post">
-          <div style="background-image: url(bannerimg.jpg)" class="post_image">
+          <%# <div style="background-image: url(bannerimg.jpg)" class="post_image"> %>
           <%# <%= image_tag 'bannerimg.jpg', class: "post_image" %1> %>
 
-            <span class="post_title"><%= post.title.truncate(95) %></span><br/>
-          </div>
+            <span class="post_title"><%= post.title %></span><br/>
+          <%# </div> %>
           <i class="post_date"><%= post.created_at.strftime("%b #{post.created_at.day.ordinalize}, %Y %I:%M%p") %><%= " | Updated At: " + post.updated_at.strftime("%b #{post.updated_at.day.ordinalize}, %Y %I:%M%p") if post.updated_at != post.created_at %></i><br><br>
-          <span class="post_content"><%= post.content.html_safe %></span><br/>
+          <span class="post_content"><%= markdown(post.content) %></span><br/>
+          <br/>
           Share: <i class="fa fa-twitter"></i><i class="fa fa-facebook"></i><i class="fa fa-google-plus"></i><br/>
-          <%= link_to "Continue...", post, class: "btn" %>
-          <% if user_is_admin? %>
-              <%= link_to 'Show', post %>
-              <%= link_to 'Edit', edit_post_path(post) %>
-          <% end %>
+          <br/>
+          <%= link_to "Permalink", post %>
+          <%= link_if_admin '| Edit', edit_post_path(post) %>
       </div>
     <% end %>
     </div>

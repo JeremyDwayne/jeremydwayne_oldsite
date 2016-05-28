@@ -1,0 +1,18 @@
+.form_wrapper
+  @extend .wrapper
+  text-align: left
+  +media($mobile)
+    margin: 1em
+  .form_form
+    .field
+      +media($mobile)
+        +span-columns(4)
+      +span-columns(12)
+      input
+        width: 100%
+
+  .actions, .form_links
+    +media($mobile)
+      +span-columns(4)
+    +span-columns(12)
+    width: 100%
