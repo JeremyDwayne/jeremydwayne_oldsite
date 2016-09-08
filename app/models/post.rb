@@ -5,4 +5,9 @@ class Post < ApplicationRecord
   def normalize_friendly_id(string)
     super[0..139]
   end
+
+  def to_param
+    slug
+  end
+
 end
