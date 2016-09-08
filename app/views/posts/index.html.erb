@@ -9,7 +9,7 @@
           <%# <div style="background-image: url(bannerimg.jpg)" class="post_image"> %>
           <%# <%= image_tag 'bannerimg.jpg', class: "post_image" %1> %>
 
-            <span class="post_title"><%= post.title %></span><br/>
+            <span class="post_title"><%= link_to post.title, post %></span><br/>
           <%# </div> %>
           <i class="post_date"><%= post.created_at.strftime("%b #{post.created_at.day.ordinalize}, %Y %I:%M%p") %><%= " | Updated At: " + post.updated_at.strftime("%b #{post.updated_at.day.ordinalize}, %Y %I:%M%p") if post.updated_at != post.created_at %></i><br><br>
           <span class="post_content"><%= markdown(post.content) %></span><br/>
