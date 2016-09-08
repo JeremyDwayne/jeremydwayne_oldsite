@@ -1,13 +1,12 @@
 class PostsController < ApplicationController
-  before_filter :authenticate_user!, only: [:new, :edit]
-  before_action :authenticate_user!, only: [:update, :create, :destroy]
+  before_action :authenticate_user!, except: [:index, :show]
   before_action :set_post, only: [:show, :edit, :update, :destroy]
   after_action :verify_authorized, except: [:index, :show]
 
   # GET /posts
   # GET /posts.json
   def index
-    @posts = Post.all
+    @posts = Post.all.order("created_at DESC")
   end
 
   # GET /posts/1
