@@ -68,6 +68,9 @@ GEM
     capistrano-bundler (1.1.4)
       capistrano (~> 3.1)
       sshkit (~> 1.2)
+    capistrano-figaro-yml (1.0.4)
+      capistrano (~> 3.1)
+      sshkit (~> 1.2, >= 1.2.0)
     capistrano-harrow (0.5.3)
     capistrano-rails (1.1.8)
       capistrano (~> 3.1)
@@ -93,6 +96,8 @@ GEM
     erubis (2.7.0)
     execjs (2.7.0)
     ffi (1.9.14)
+    figaro (1.1.1)
+      thor (~> 0.14)
     friendly_id (5.1.0)
       activerecord (>= 4.0.0)
     globalid (0.3.7)
@@ -231,11 +236,13 @@ DEPENDENCIES
   byebug
   capistrano (~> 3.1)
   capistrano-bundler (~> 1.1.2)
+  capistrano-figaro-yml (~> 1.0.2)
   capistrano-rails (~> 1.1)
   capistrano-rvm!
   capistrano3-puma
   coffee-rails (~> 4.1.0)
   devise
+  figaro
   friendly_id (~> 5.1)
   jbuilder (~> 2.0)
   jquery-rails

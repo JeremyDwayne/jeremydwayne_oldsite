@@ -22,6 +22,7 @@ gem 'pundit'
 gem 'friendly_id', '~> 5.1'
 gem 'kaminari'
 gem 'social-share-button'
+gem 'figaro'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
@@ -35,7 +36,7 @@ group :development, :test do
   gem 'capistrano-bundler', '~> 1.1.2'
   gem 'capistrano-rvm', github: "capistrano/rvm"
   gem 'capistrano3-puma'
-
+  gem 'capistrano-figaro-yml', '~> 1.0.2'
 end
 
 group :development do
