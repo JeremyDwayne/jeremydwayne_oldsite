@@ -23,4 +23,8 @@ class PostPolicy < ApplicationPolicy
   def destroy?
     @current_user.admin?
   end
+
+  def preview?
+    @current_user.admin?
+  end
 end

@@ -1,0 +1,20 @@
+<div class="modal fade" id="previewModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <h1 class="modal-title" id="myModalLabel"><%= escape_javascript(params[:preview][:title]) %>
+        </h1>
+      </div>
+      <div id="article" class="modal-body">
+        <%= markdown(params[:preview][:content]) %>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn" data-dismiss="modal">Close
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

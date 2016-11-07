@@ -68,6 +68,14 @@ class PostsController < ApplicationController
     end
   end
 
+  def preview
+    authorize Post
+    puts params.inspect
+    respond_to do |format|
+      format.js
+    end
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_post
