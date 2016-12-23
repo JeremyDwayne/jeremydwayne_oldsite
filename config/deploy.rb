@@ -2,7 +2,7 @@ set :stage, :production
 set :application, 'jeremydwayne' 
 set :repo_url, 'git@github.com:jeremydwayne/jeremydwayne.git'
 set :user, "deploy"
-# set :rails_env, "production"
+
 set :scm, :git
 set :branch, "master"
 set :use_sudo, false
