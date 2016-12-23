@@ -46,7 +46,7 @@
     <footer id="main_footer">
       <div class="wrapper">
         <div id="copyright">
-          &copy;<%= Time.now.year %> <span class="logo"><a href="/"><b>[</b>Jeremy Winterberg<b>]</b></a></span>
+          &copy;<%= Time.now.year %> <span class="logo"><a href="/"><b>[</b>Jeremy Winterberg<b>]</b></a></span></i>
         </div>
         <div id="footer_links">
           <a href="http://www.github.com/jeremydwayne" target="_blank"><i class="fa fa-github"></i></a>
@@ -55,6 +55,9 @@
           <a href="http://www.instagram.com/jeremydwayne" target="_blank"><i class="fa fa-instagram"></i></a>
           <a href="http://www.twitch.tv/jeremydwayne" target="_blank"><i class="fa fa-twitch"></i></a>
           <a href="http://www.youtube.com/jeremydwayneirl" target="_blank"><i class="fa fa-youtube"></i></a>
+          <% path = !user_signed_in? ? new_user_session_path : destroy_user_session_path %>
+          <% mthd = !user_signed_in? ? :get : :delete %>
+          <%= link_to path, method: mthd do %><i class="fa fa-key"></i><% end %>
         </div>
       </div>
     </footer>
