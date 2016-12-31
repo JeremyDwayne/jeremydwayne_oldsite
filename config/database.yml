@@ -17,7 +17,6 @@ production:
   username: deploy
   adapter: postgresql
   host: jeremydwayne.com
-  port: 5432
   password: <%= ENV['DB_PASS'] %>
   pool: 5
   reconnect: false
