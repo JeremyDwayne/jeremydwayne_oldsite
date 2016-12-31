@@ -16,7 +16,7 @@ production:
   database: jeremydwayne_production
   username: deploy
   adapter: postgresql
-  host: jeremydwayne.com
+  host: localhost
   password: <%= ENV['DB_PASS'] %>
   pool: 5
   reconnect: false
