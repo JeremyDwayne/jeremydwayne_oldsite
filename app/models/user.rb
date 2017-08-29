@@ -4,7 +4,7 @@ class User < ApplicationRecord
   after_initialize :set_default_role, if: :new_record?
 
   # :confirmable, :lockable, :timeoutable and :omniauthable
-  devise :database_authenticatable, :registerable,
+  devise :database_authenticatable,
          :recoverable, :rememberable, :trackable, :validatable
 
   private

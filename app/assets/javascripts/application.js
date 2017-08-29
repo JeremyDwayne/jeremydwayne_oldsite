@@ -2,6 +2,7 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require social-share-button
+//= require jquery-ui/widgets/datepicker
 //= require showdown
 //= require_tree .
 

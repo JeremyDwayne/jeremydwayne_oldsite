@@ -1,19 +1,18 @@
 source 'https://rubygems.org'
 
-
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 5.1', '>= 5.1.2'
+gem 'rails', '~> 5.1', '>= 5.1.3'
 gem 'pg', '~> 0.18'
 gem 'puma', '~> 3.0'
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
-# gem 'coffee-rails', '~> 4.1.0'
 gem "bower-rails", "~> 0.11.0"
 
 gem 'bourbon'
 gem 'neat'
 gem 'bitters'
 gem 'jquery-rails'
+gem 'jquery-ui-rails'
 gem 'turbolinks', '~> 5.0'
 gem 'jbuilder', '~> 2.0'
 gem 'coderay'
@@ -24,10 +23,6 @@ gem 'friendly_id', '~> 5.1'
 gem 'kaminari'
 gem 'social-share-button'
 gem 'figaro'
-# Use Redis adapter to run Action Cable in production
-# gem 'redis', '~> 3.0'
-# Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
 
 group :development, :test do
   gem 'sqlite3'
