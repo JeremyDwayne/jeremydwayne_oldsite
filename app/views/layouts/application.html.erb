@@ -9,6 +9,9 @@
     <%= stylesheet_link_tag "https://maxcdn.bootstrapcdn.com/font-awesome/4.6.2/css/font-awesome.min.css"%>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <%= stylesheet_link_tag "https://fonts.googleapis.com/css?family=Droid+Sans:400,700" %>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.css">
+    <script src="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.js"></script>
+
     <meta name="google-site-verification" content="u_cz0m3WLLjYWcrSTVQ9FcoVOYJNaCrPuT-O7k1MKuA" />
     <script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -23,16 +26,18 @@
 
   <body>
     <header id="main_header">
-      <div class="navbar">
-        <span class="logo"><a href="/"><b>[</b>Jeremy Winterberg<b>]</b></a></span>
-        <nav id="main_nav"> 
-          <ul>
-            <li><%= link_to 'Home', root_path, class: active_class(root_path) %></li>
-            <li><%= link_to 'Blog', posts_path, class: active_class(posts_path) %></li>
-            <li><%= link_to 'Portfolio', projects_path, class: active_class(projects_path) %></li>
-            <li><%= link_to 'Resume', resume_path, class: active_class(resume_path) %></li>
-          </ul>
-        </nav>
+      <div class="wrapper">
+        <div class="navbar">
+          <span class="logo"><a href="/"><b>[</b>Jeremy Winterberg<b>]</b></a></span>
+          <nav id="main_nav"> 
+            <ul>
+              <li><%= link_to 'Home', root_path, class: active_class(root_path) %></li>
+              <li><%= link_to 'Blog', posts_path, class: active_class(posts_path) %></li>
+              <li><%= link_to 'Portfolio', projects_path, class: active_class(projects_path) %></li>
+              <li><%= link_to 'Resume', resume_path, class: active_class(resume_path) %></li>
+            </ul>
+          </nav>
+        </div>
       </div>
     </header>
 
@@ -45,6 +50,7 @@
 
     <footer id="main_footer">
       <div class="wrapper">
+        <!-- LightWidget WIDGET --><script src="//lightwidget.com/widgets/lightwidget.js"></script><iframe src="//lightwidget.com/widgets/84eb731ea7f05fc6bec71be1ae1ea47c.html" scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width: 100%; border: 0; overflow: hidden;"></iframe>
         <div id="copyright">
           &copy;<%= Time.now.year %> <span class="logo"><a href="/"><b>[</b>Jeremy Winterberg<b>]</b></a></span></i>
         </div>

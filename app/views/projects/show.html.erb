@@ -1,16 +1,22 @@
-<div class="wrapper">
-  <div id="post_image"><h2><%= @project.title %></h2></div>
-  <p>
-    <strong>Url:</strong>
-    <%= link_to @project.url %>
-  </p>
+<section class="portfolio_list">
+  <div class="wrapper">
+    <div class="portfolio_row">
+      <div class="project">
+        <div id="project_image"><h2><%= @project.title %></h2></div>
+        <p>
+          <strong>Url:</strong>
+          <%= link_to @project.url %>
+        </p>
 
-  <p>
-    <%= markdown(@project.content) %>
-  </p>
-  <br/>
-  Share: <%= social_share_button_tag(@project.title, url: post_url(@project), popup: true) %>
-  <br/>
-  <%= link_if_admin 'Edit |', edit_project_path(@project) %>
-  <%= link_to 'Back', projects_path %>
-</div>
+        <p>
+          <%= markdown(@project.content) %>
+        </p>
+        <br/>
+        Share: <%= social_share_button_tag(@project.title, url: projects_url(@project), popup: true) %>
+      <br/>
+      <%= link_if_admin 'Edit |', edit_project_path(@project) %>
+      <%= link_to 'Back', projects_path %>
+      </div>
+    </div>
+  </div>
+</section>

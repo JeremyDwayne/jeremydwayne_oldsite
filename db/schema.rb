@@ -22,60 +22,6 @@ ActiveRecord::Schema.define(version: 20170801085661) do
     t.index ["sluggable_type"], name: "index_friendly_id_slugs_on_sluggable_type"
   end
 
-  create_table "lines_articles", force: :cascade do |t|
-    t.string "title"
-    t.string "sub_title"
-    t.text "content"
-    t.boolean "published", default: false
-    t.datetime "published_at"
-    t.string "hero_image"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.string "slug"
-    t.string "gplus_url"
-    t.boolean "featured", default: false
-    t.string "document"
-    t.string "short_hero_image"
-    t.text "teaser"
-    t.index ["slug"], name: "index_lines_articles_on_slug", unique: true
-  end
-
-  create_table "lines_authorables", force: :cascade do |t|
-    t.integer "author_id"
-    t.integer "article_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["article_id"], name: "index_lines_authorables_on_article_id"
-    t.index ["author_id"], name: "index_lines_authorables_on_author_id"
-  end
-
-  create_table "lines_authors", force: :cascade do |t|
-    t.string "name"
-    t.string "email"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.text "description"
-    t.string "gplus_profile"
-  end
-
-  create_table "lines_pictures", force: :cascade do |t|
-    t.string "image"
-    t.string "name"
-    t.integer "article_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["article_id"], name: "index_lines_pictures_on_article_id"
-  end
-
-  create_table "lines_users", force: :cascade do |t|
-    t.string "email"
-    t.string "password_digest"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.string "reset_digest"
-    t.datetime "reset_sent_at"
-  end
-
   create_table "posts", force: :cascade do |t|
     t.string "title"
     t.text "content"

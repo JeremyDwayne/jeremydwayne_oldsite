@@ -14,7 +14,7 @@
           <i class="project_date"><%= project.created_at.strftime("%b #{project.created_at.day.ordinalize}, %Y %I:%M%p") %><%= " | Updated At: " + project.updated_at.strftime("%b #{project.updated_at.day.ordinalize}, %Y %I:%M%p") if project.updated_at != project.created_at %></i><br><br>
           <span class="project_content"><%= markdown(project.content) %></span><br/>
           <br/>
-          Share: <%= social_share_button_tag(project.title, url: post_url(project), popup: true) %>
+          Share: <%= social_share_button_tag(project.title, url: projects_url(project), popup: true) %>
           <br/>
           <%= link_to "Permalink", project %>
           <%= link_if_admin '| Edit', edit_project_path(project) %>

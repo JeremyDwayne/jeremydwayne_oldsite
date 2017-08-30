@@ -1,7 +1,7 @@
 set :stage, :production
 set :application, 'jeremydwayne' 
 set :repo_url, 'git@github.com:jeremydwayne/jeremydwayne.git'
-set :user, "deploy"
+set :user, "winterjd"
 
 set :scm, :git
 set :branch, "master"

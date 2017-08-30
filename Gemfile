@@ -23,6 +23,7 @@ gem 'friendly_id', '~> 5.1'
 gem 'kaminari'
 gem 'social-share-button'
 gem 'figaro'
+gem "paperclip", "~> 5.0.0"
 
 group :development, :test do
   gem 'sqlite3'
