@@ -9,7 +9,7 @@ set :use_sudo, false
 set :pty, true
 set :deploy_via, :remote_cache
 set :deploy_to, "/var/www/jeremydwayne"
-set :tmp_dir, "/home/deploy/tmp"
+set :tmp_dir, "/home/#{fetch(:user)}/tmp"
 # server "jeremydwayne.com", roles: [:app, :web, :db], :primary => true
 set :ssh_options,     { forward_agent: true, user: fetch(:user), keys: %w(~/.ssh/id_rsa.pub) }
 
