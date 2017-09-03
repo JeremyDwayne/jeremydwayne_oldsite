@@ -1,2 +1,3 @@
 set :stage, :production
-server 'jeremydwayne.com', user: 'winterjd', roles: %w{web app db}
+set :branch, "master"
+server 'jeremydwayne.com', user: 'deploy', roles: %w{web app db}

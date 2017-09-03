@@ -1,17 +1,42 @@
-set :stage, :production
 set :application, 'jeremydwayne' 
+set :ruby_version, "ruby-2.4.1"
 set :repo_url, 'git@github.com:jeremydwayne/jeremydwayne.git'
-set :user, "winterjd"
+set :user, "deploy"
 
-set :scm, :git
-set :branch, "master"
 set :use_sudo, false
 set :pty, true
 set :deploy_via, :remote_cache
 set :deploy_to, "/var/www/jeremydwayne"
 set :tmp_dir, "/home/#{fetch(:user)}/tmp"
-# server "jeremydwayne.com", roles: [:app, :web, :db], :primary => true
-set :ssh_options,     { forward_agent: true, user: fetch(:user), keys: %w(~/.ssh/id_rsa.pub) }
+
+set :ssh_options, { 
+  forward_agent: true, 
+  user: fetch(:user), 
+  keys: %w(~/.ssh/id_rsa.pub) 
+}
+
+# RVM Settings
+set :rvm1_ruby_version, "#{fetch :ruby_version}@#{fetch :application}"
+set :rvm1_map_bins, %w{rake gem bundle ruby}
+before 'rvm1:install:rvm', 'app:update_rvm_key'
+before 'deploy', 'rvm1:install:rvm'
+after 'rvm1:install:rvm', 'rvm1:install:ruby'
+after 'rvm1:install:ruby', 'app:install_bundler'
+
+namespace :app do
+  task :update_rvm_key do
+    on release_roles :all do
+      execute :gpg, "--keyserver hkp://keys.gnupg.net --recv-keys D39DC0E3"
+    end
+  end
+
+  desc "Install Bundler"
+  task :install_bundler do
+    on release_roles :all do
+      execute "cd #{release_path} && #{fetch(:rvm1_auto_script_path)}/rvm-auto.sh . gem install bundler"
+    end
+  end
+end
 
 set :puma_threads, [4, 16]
 set :puma_workers, 0
@@ -39,7 +64,7 @@ namespace :puma do
 		end
 	end
 
-	before :start, :make_dirs
+	before 'deploy:starting', :make_dirs
 end
 
 namespace :deploy do

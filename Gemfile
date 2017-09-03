@@ -28,12 +28,6 @@ gem "paperclip", "~> 5.0.0"
 group :development, :test do
   gem 'sqlite3'
   gem 'byebug', platform: :mri
-  gem 'capistrano', '~> 3.1'
-  gem 'capistrano-rails', '~> 1.1'
-  gem 'capistrano-bundler', '~> 1.1.2'
-  gem 'capistrano-rvm', github: "capistrano/rvm"
-  gem 'capistrano3-puma'
-  gem 'capistrano-figaro-yml', '~> 1.0.2'
 end
 
 group :development do
@@ -41,6 +35,13 @@ group :development do
   gem 'listen', '~> 3.0.5'
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+
+  gem 'capistrano', '3.8.2'
+  gem 'rvm1-capistrano3', require: false
+  gem 'capistrano-rails'
+  gem 'sshkit-sudo'
+  gem 'capistrano3-puma'
+  gem 'capistrano-figaro-yml', '~> 1.0.2'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
