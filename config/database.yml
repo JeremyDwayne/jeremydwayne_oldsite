@@ -16,6 +16,6 @@ production:
   adapter: postgresql
   pool: 5
   encoding: unicode
-  database: <%= Figaro.env.DB_PRODUCTION %>
-  username: <%= Figaro.env.DB_PRODUCTION_USER %>
-  password: <%= Figaro.env.DB_PASS %>
+  database: <%= ENV["DB_PRODUCTION"] %>
+  username: <%= ENV["DB_PRODUCTION_USER"] %>
+  password: <%= ENV["DB_PASS"] %>

@@ -71,28 +71,34 @@ end
 namespace :figaro do
   desc "SCP transfer figaro configuration to the shared folder"
   task :setup do
-    transfer :up, "config/application.yml", "#{shared_path}/application.yml", via: :scp
+    on roles(:app) do
+      upload! "config/application.yml", "#{shared_path}/application.yml"
+    end
   end
 
   desc "Symlink application.yml to the release path"
   task :symlink do
-    run "ln -sf #{shared_path}/application.yml #{latest_release}/config/application.yml"
+    on roles(:app) do
+      execute "ln -sf #{shared_path}/application.yml #{release_path}/config/application.yml"
+    end
   end
 
   desc "Check if figaro configuration file exists on the server"
   task :check do
-    begin
-      run "test -f #{shared_path}/application.yml"
-    rescue Capistrano::CommandError
-      unless fetch(:force, false)
-        logger.important 'application.yml file does not exist on the server "shared/application.yml"'
-        exit
+    on roles(:app) do
+      begin
+        execute "test -f #{shared_path}/application.yml"
+      rescue Capistrano::CommandError
+        unless fetch(:force, false)
+          logger.important 'application.yml file does not exist on the server "shared/application.yml"'
+          exit
+        end
       end
     end
   end
 end
-after "deploy:setup", "figaro:setup"
-after "deploy:finalize_update", "figaro:symlink"
+after "deploy:starting", "figaro:setup"
+# after "deploy:updated", "figaro:symlink"
 
 namespace :deploy do
 	namespace :assets do
