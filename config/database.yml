@@ -16,7 +16,7 @@ production:
   adapter: postgresql
   pool: 5
   encoding: unicode
-  host: jeremydwayne.com
-  database: jeremydwayne_production
-  username: jeremydwayne_production
+  database: <%= ENV["DB_PRODUCTION"] %>
+  username: <%= ENV["DB_PRODUCTION_USER"] %>
   password: <%= ENV["DB_PASS"] %>
+  port:     <%= ENV["DB_PRODUCTION_PORT"] %>
