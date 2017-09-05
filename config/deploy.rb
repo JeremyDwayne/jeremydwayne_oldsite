@@ -136,12 +136,12 @@ namespace :deploy do
   desc 'Restart application'
   task :restart do
     on roles(:app), in: :sequence, wait: 5 do
-      execute "touch #{current_path}/tmp/restart.txt"
+      execute :sudo, "passenger-config restart-app --ignore-app-not-running #{deploy_to}"
     end
   end
 
 	before :starting,     :check_revision
 	after  :finishing,    :compile_assets
 	after  :finishing,    :cleanup
-  after :finishing,     :restart
+  after  :finishing,    :restart
 end
