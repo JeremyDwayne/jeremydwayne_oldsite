@@ -8,6 +8,7 @@ install_plugin Capistrano::SCM::Git
 require "rvm1/capistrano3"
 require 'capistrano/rails'
 require 'capistrano/figaro_yml'
+require 'capistrano/rails/console'
 
 require 'sshkit/sudo'
 

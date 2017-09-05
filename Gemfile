@@ -41,6 +41,7 @@ group :development do
   gem 'capistrano-rails'
   gem 'sshkit-sudo'
   gem 'capistrano-figaro-yml', '~> 1.0.2'
+  gem 'capistrano-rails-console', require: false
 end
 
 group :production do
