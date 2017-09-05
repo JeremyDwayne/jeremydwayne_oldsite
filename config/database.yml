@@ -14,7 +14,8 @@ test:
 
 production:
   database: <%= ENV['DB_PRODUCTION'] %>
-  username: deploy
+  username: <%= ENV['DB_PRODUCTION_USER'] %>
+  host: ""
   adapter: postgresql
   password: <%= ENV['DB_PASS'] %>
   pool: 5
