@@ -3,7 +3,6 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1', '>= 5.1.3'
 gem 'pg', '~> 0.18'
-gem 'puma', '~> 3.0'
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
 gem "bower-rails", "~> 0.11.0"
@@ -31,6 +30,7 @@ group :development, :test do
 end
 
 group :development do
+  gem 'puma', '~> 3.0'
   gem 'web-console'
   gem 'listen', '~> 3.0.5'
   gem 'spring'
@@ -42,6 +42,11 @@ group :development do
   gem 'sshkit-sudo'
   gem 'capistrano3-puma'
   gem 'capistrano-figaro-yml', '~> 1.0.2'
+  gem 'capistrano-passenger'
+end
+
+group :production do
+  gem 'passenger'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
