@@ -13,10 +13,9 @@ test:
   database: jeremydwayne_test
 
 production:
+  adapter: postgresql
+  pool: 5
+  encoding: unicode
   database: <%= ENV['DB_PRODUCTION'] %>
   username: <%= ENV['DB_PRODUCTION_USER'] %>
-  host: ""
-  adapter: postgresql
   password: <%= ENV['DB_PASS'] %>
-  pool: 5
-  reconnect: false
