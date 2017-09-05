@@ -1,5 +1,4 @@
 require_relative 'boot'
-Figaro.load
 
 require 'rails/all'
 
