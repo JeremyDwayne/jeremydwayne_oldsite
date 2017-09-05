@@ -40,9 +40,7 @@ group :development do
   gem 'rvm1-capistrano3', require: false
   gem 'capistrano-rails'
   gem 'sshkit-sudo'
-  gem 'capistrano3-puma'
   gem 'capistrano-figaro-yml', '~> 1.0.2'
-  gem 'capistrano-passenger'
 end
 
 group :production do

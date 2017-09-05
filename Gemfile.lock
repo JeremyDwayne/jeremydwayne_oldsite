@@ -64,15 +64,9 @@ GEM
     capistrano-figaro-yml (1.0.5)
       capistrano (~> 3.1)
       sshkit (~> 1.2, >= 1.2.0)
-    capistrano-passenger (0.2.0)
-      capistrano (~> 3.0)
     capistrano-rails (1.3.0)
       capistrano (~> 3.1)
       capistrano-bundler (~> 1.1)
-    capistrano3-puma (3.1.1)
-      capistrano (~> 3.7)
-      capistrano-bundler
-      puma (~> 3.4)
     climate_control (0.2.0)
     cocaine (0.5.8)
       climate_control (>= 0.0.3, < 1.0)
@@ -259,9 +253,7 @@ DEPENDENCIES
   byebug
   capistrano (= 3.8.2)
   capistrano-figaro-yml (~> 1.0.2)
-  capistrano-passenger
   capistrano-rails
-  capistrano3-puma
   coderay
   devise
   figaro
