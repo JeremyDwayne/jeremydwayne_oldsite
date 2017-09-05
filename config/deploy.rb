@@ -1,24 +1,24 @@
 set :application, 'jeremydwayne' 
 set :ruby_version, "ruby-2.4.1"
 set :repo_url, 'git@github.com:jeremydwayne/jeremydwayne.git'
-set :user, "deploy"
+set :user, 'deploy'
 
 set :use_sudo, false
 set :pty, true
+set :repository_cache, "git_cache"
 set :deploy_via, :remote_cache
-set :deploy_to, "/var/www/jeremydwayne"
+set :deploy_to, "/var/www/#{fetch(:application)}"
 set :tmp_dir, "/home/#{fetch(:user)}/tmp"
 
 set :ssh_options, { 
   forward_agent: true, 
-  user: fetch(:user), 
-  keys: %w(~/.ssh/id_rsa.pub) 
+  keys: %w(~/.ssh/id_rsa) 
 }
 
 # RVM Settings
 set :rvm1_ruby_version, "#{fetch :ruby_version}@#{fetch :application}"
 set :rvm1_map_bins, %w{rake gem bundle ruby}
-before 'rvm1:install:rvm', 'app:update_rvm_key'
+before 'deploy', 'app:update_rvm_key'
 before 'deploy', 'rvm1:install:rvm'
 after 'rvm1:install:rvm', 'rvm1:install:ruby'
 after 'rvm1:install:ruby', 'app:install_bundler'
@@ -56,6 +56,7 @@ set :puma_access_log, "#{release_path}/log/puma.error.log"
 set :puma_error_log,  "#{release_path}/log/puma.access.log"
 set :puma_bind,       "unix://#{shared_path}/tmp/sockets/#{fetch(:application)}-puma.sock"
 namespace :puma do
+
 	desc 'Create Directories for Puma Pids and Socket'
 	task :make_dirs do
 		on roles(:app) do
@@ -64,7 +65,7 @@ namespace :puma do
 		end
 	end
 
-	before 'deploy:starting', :make_dirs
+	before 'deploy:starting', 'puma:make_dirs'
 end
 
 namespace :deploy do

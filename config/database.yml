@@ -13,10 +13,9 @@ test:
   database: jeremydwayne_test
 
 production:
-  database: jeremydwayne_production
+  database: <%= ENV['DB_PRODUCTION'] %>
   username: deploy
   adapter: postgresql
-  host: localhost
   password: <%= ENV['DB_PASS'] %>
   pool: 5
   reconnect: false
