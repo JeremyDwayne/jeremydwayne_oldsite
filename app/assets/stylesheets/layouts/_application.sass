@@ -17,12 +17,18 @@ html, body
 
 .wrapper
   +outer-container
-  margin-left: auto
   +media($desktop)
-  +media($mobile)
-    margin: 0 0
+    width: 80%
+    margin-left: auto
+    margin-right: auto
   +media($tablet)
-    margin: 1em 1em
+    width: 85%
+    margin-left: auto
+    margin-right: auto
+  +media($mobile)
+    width: 95%
+    margin-left: auto
+    margin-right: auto
 
 .logo 
   a 
