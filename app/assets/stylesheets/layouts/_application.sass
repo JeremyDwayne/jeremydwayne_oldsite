@@ -9,7 +9,7 @@ $desktop: new-breakpoint(min-width 1024px 12)
 * 
   box-sizing: border-box
 
-html, body
+body
   display: flex
   min-height: 100vh
   flex-direction: column
@@ -19,16 +19,10 @@ html, body
   +outer-container
   +media($desktop)
     width: 80%
-    margin-left: auto
-    margin-right: auto
   +media($tablet)
     width: 85%
-    margin-left: auto
-    margin-right: auto
   +media($mobile)
     width: 95%
-    margin-left: auto
-    margin-right: auto
 
 .logo 
   a 
@@ -60,7 +54,7 @@ header#main_header
         a
           font-size: 1.75em
       +media($tablet)
-        +span-columns(5)
+        +span-columns(6)
         text-align: center
         bottom: 6em
         a
@@ -264,3 +258,6 @@ input.btn, a.btn
 .pagination li
   float: left
   display: inline
+
+iframe
+  @extend .wrapper
