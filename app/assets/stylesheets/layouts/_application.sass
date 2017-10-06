@@ -2,8 +2,8 @@
   font-family: Norwester
   src: asset-url("norwester/norwester.ttf")
 
-$mobile: new-breakpoint(max-width 480px 4)
-$tablet: new-breakpoint(max-width 1023px 6)
+$mobile: new-breakpoint(min-width 320px 4)
+$tablet: new-breakpoint(min-width 720px 8)
 $desktop: new-breakpoint(min-width 1024px 12)
 
 * 
@@ -17,12 +17,12 @@ body
 
 .wrapper
   +outer-container
-  +media($desktop)
-    width: 80%
-  +media($tablet)
-    width: 85%
   +media($mobile)
     width: 95%
+  +media($tablet)
+    width: 85%
+  +media($desktop)
+    width: 80%
 
 .logo 
   a 
@@ -45,75 +45,29 @@ header#main_header
   background-size: cover
   box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12)
   .navbar 
-    +outer-container
     .logo 
+      left: 0
+      right: 0
+      margin: 0 auto
+      text-align: center
+      position: absolute
+      bottom: 5em
       +media($mobile)
-        +span-columns(4)
-        text-align: center
-        bottom: 2em
-        a
-          font-size: 1.75em
-      +media($tablet)
-        +span-columns(6)
-        text-align: center
-        bottom: 6em
         a
           font-size: 2.5em
-      +media($desktop)
-        +span-columns(10)
-        text-align: center
-        bottom: 6em
+      +media($tablet)
         a
           font-size: 3em
-
-      position: absolute
-      bottom: 30px
-      float: left
-    #main_nav 
-      +media($mobile)
-        +span-columns(4)
-        clear: both
-        ul
-          +span-columns(4)
-          text-align: center
-          li
-            padding: 0 .5em
-            a 
-              display: block
-              font-size: .8em
-              &.active
-                padding-bottom: 0
-                border-bottom: 4px solid $secondary
-      +media($tablet)
-        +span-columns(5)
-        clear: both
-        ul
-          +span-columns(5)
-          text-align: center
-          li
-            padding: 0 .5em
-            a 
-              display: block
-              font-size: .8em
-              &.active
-                padding-bottom: 0
-                border-bottom: 4px solid $secondary
       +media($desktop)
-        +span-columns(10)
-        clear: both
-        ul
-          +span-columns(10)
-          text-align: center
-          li
-            padding: 0 .5em
-            a 
-              display: block
-              font-size: .8em
-              &.active
-                padding-bottom: 0
-                border-bottom: 4px solid $secondary
-      float: right
+        a
+          font-size: 3.5em
+    #main_nav 
       ul 
+        left: 0
+        right: 0
+        margin: 0 auto
+        text-align: center
+
         position: absolute
         bottom: 30px
         list-style: none
@@ -122,10 +76,13 @@ header#main_header
           display: inline-block
           font-size: 1.5em
           padding: 0 .5em
+          &:first-child
+            padding-left: 0
           &:last-child
             padding-right: 0
           a 
             color: white
+            font-size: .8em
             text-decoration: none
             background: none
             padding: 5px
@@ -164,33 +121,63 @@ header#main_header
 
 #main_footer 
   width: 100%
-  padding-top: 30px
+  height: 100%
   color: white
-  min-height: 250px
+  min-height: 275px
   +media($mobile)
     text-align: center
-    height: 160px
+    min-height: 200px
   background-color: $main
+
   #copyright 
-    +span-columns(3)
+    @extend .wrapper
     +media($mobile)
       +span-columns(4)
+      font-size: 1em
       text-align: center
     +media($tablet)
-      +span-columns(6)
+      +span-columns(8)
+      font-size: 1em
       text-align: center
-    font-size: 1em
-    float: left
+    +media($desktop)
+      +span-columns(3)
+      font-size: 1em
+      float: left
     .logo 
       a 
         font-family: "Norwester"
-        font-size: 1rem
+        +media($mobile)
+          font-size: 2rem
+        +media($tablet)
+          font-size: 2rem
+        +media($desktop)
+          font-size: 1rem
         color: white
         text-decoration: none
         b 
           font-weight: 700
-          font-size: 1.25em
           color: $secondary
+          font-size: 1.25em
+
+  #footer_links 
+    @extend .wrapper
+    +media($mobile)
+      +span-columns(4)
+      text-align: center
+    +media($tablet)
+      +span-columns(8)
+      text-align: center
+    +media($desktop)
+      +span-columns(4)
+      float: right
+    a 
+      font-size: 1.75em
+      margin-left: .3em
+      color: $highlight
+      &:hover
+        color: $secondary
+        background: none
+
   #user_login
     +span-columns(1)
     text-align: center
@@ -200,21 +187,7 @@ header#main_header
     +media($mobile)
       +span-columns(4)
       padding: 5px
-  #footer_links 
-    float: right
-    +media($mobile)
-      +span-columns(4)
-      text-align: center
-    +media($tablet)
-      +span-columns(6)
-      text-align: center
-    a 
-      font-size: 1.75em
-      margin-left: .3em
-      color: $highlight
-      &:hover
-        color: $secondary
-        background: none
+
 
 input[type="text"], input[type="email"], input[type="password"] 
   +media($mobile)

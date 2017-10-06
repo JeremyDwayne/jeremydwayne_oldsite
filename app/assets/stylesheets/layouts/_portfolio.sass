@@ -9,13 +9,11 @@
       margin: 2%
 
 .portfolio_row
+  @extend .wrapper
   .project
     +media($mobile)
-      +span-columns(3.85)
       margin: 2%
       min-height: 35em
-    +span-columns(12)
-    +outer-container
     padding: 2em
     margin: .5%
     min-height: 10em

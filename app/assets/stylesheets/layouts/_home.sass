@@ -3,13 +3,14 @@
   height: 100%
   margin-top: -20px
   padding: 6em 0 6em
-  +media($mobile)
-    padding: 2em
   background-color: $main
   .col 
-    +span-columns(4)
+    +media($mobile)
+      +span-columns(4)
     +media($tablet)
-      +span-columns(6)
+      +span-columns(8)
+    +media($desktop)
+      +span-columns(4)
     margin-bottom: 2%
     min-height: 15em
     height: 100%
@@ -51,7 +52,7 @@
           color: shade($secondary, 20%)
 
 #bio 
-  width: 100%
+  @extend .wrapper
   height: 100%
   padding: 6em 0 6em
   +media($mobile)

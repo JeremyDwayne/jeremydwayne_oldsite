@@ -1,26 +1,24 @@
 <section class="portfolio_list">
-  <div class="wrapper">
+  <div class="portfolio_row">
     <%= link_if_admin 'New Project', new_project_path, "btn" %>
     <br/>
     <br/>
-    <div class="portfolio_row">
-      <% @projects.each do |project| %>
-        <div class="project">
-          <%# <div style="background-image: url(bannerimg.jpg)" class="project_image"> %>
-          <%# <%= image_tag 'bannerimg.jpg', class: "project_image" %1> %>
+    <% @projects.each do |project| %>
+      <div class="project">
+        <%# <div style="background-image: url(bannerimg.jpg)" class="project_image"> %>
+        <%# <%= image_tag 'bannerimg.jpg', class: "project_image" %1> %>
 
-            <span class="project_title"><%= link_to project.title, project.url %></span><br/>
-          <%# </div> %>
-          <i class="project_date"><%= project.created_at.strftime("%b #{project.created_at.day.ordinalize}, %Y %I:%M%p") %><%= " | Updated At: " + project.updated_at.strftime("%b #{project.updated_at.day.ordinalize}, %Y %I:%M%p") if project.updated_at != project.created_at %></i><br><br>
-          <span class="project_content"><%= markdown(project.content) %></span><br/>
-          <br/>
-          Share: <%= social_share_button_tag(project.title, url: projects_url(project), popup: true) %>
-          <br/>
-          <%= link_to "Permalink", project %>
-          <%= link_if_admin '| Edit', edit_project_path(project) %>
-      </div>
-    <% end %>
+          <span class="project_title"><%= link_to project.title, project.url %></span><br/>
+        <%# </div> %>
+        <i class="project_date"><%= project.created_at.strftime("%b #{project.created_at.day.ordinalize}, %Y %I:%M%p") %><%= " | Updated At: " + project.updated_at.strftime("%b #{project.updated_at.day.ordinalize}, %Y %I:%M%p") if project.updated_at != project.created_at %></i><br><br>
+        <span class="project_content"><%= markdown(project.content) %></span><br/>
+        <br/>
+        Share: <%= social_share_button_tag(project.title, url: projects_url(project), popup: true) %>
+        <br/>
+        <%= link_to "Permalink", project %>
+        <%= link_if_admin '| Edit', edit_project_path(project) %>
     </div>
-    <br>
+  <% end %>
   </div>
+  <br>
 </section>
