@@ -21,6 +21,8 @@
     border-radius: 2px
     border: none
     box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12)
+    li
+      display: list-item
     h4
       color: $main 
     .fa
@@ -36,3 +38,22 @@
     img
       float: left
       padding: 0 1em 1em 0
+    .skills
+      +outer-container
+      b, strong
+        +media($mobile)
+          +span-columns(6)
+        +media($tablet)
+          +span-columns(6)
+        +media($desktop)
+          +span-columns(2)
+      span
+        +media($mobile)
+          +span-columns(6)
+        +media($tablet)
+          +span-columns(6)
+        +media($desktop)
+          +span-columns(8)
+
+.tabbed
+  margin-left: 2em

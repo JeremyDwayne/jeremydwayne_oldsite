@@ -53,15 +53,20 @@ header#main_header
   .navbar 
     +outer-container
     .logo 
-      +span-columns(6)
       +media($mobile)
         +span-columns(4)
         text-align: center
-        bottom: 6em
+        bottom: 2em
         a
           font-size: 1.75em
       +media($tablet)
-        +span-columns(6)
+        +span-columns(5)
+        text-align: center
+        bottom: 6em
+        a
+          font-size: 2.5em
+      +media($desktop)
+        +span-columns(10)
         text-align: center
         bottom: 6em
         a
@@ -86,10 +91,10 @@ header#main_header
                 padding-bottom: 0
                 border-bottom: 4px solid $secondary
       +media($tablet)
-        +span-columns(6)
+        +span-columns(5)
         clear: both
         ul
-          +span-columns(6)
+          +span-columns(5)
           text-align: center
           li
             padding: 0 .5em
@@ -99,7 +104,20 @@ header#main_header
               &.active
                 padding-bottom: 0
                 border-bottom: 4px solid $secondary
-      +span-columns(5.2)
+      +media($desktop)
+        +span-columns(10)
+        clear: both
+        ul
+          +span-columns(10)
+          text-align: center
+          li
+            padding: 0 .5em
+            a 
+              display: block
+              font-size: .8em
+              &.active
+                padding-bottom: 0
+                border-bottom: 4px solid $secondary
       float: right
       ul 
         position: absolute
