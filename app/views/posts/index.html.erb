@@ -12,8 +12,7 @@
           <%# </div> %>
 
           <i class="post_date"><%= post.created_at.strftime("%b #{post.created_at.day.ordinalize}, %Y %I:%M%p") %><%= " | Updated At: " + post.updated_at.strftime("%b #{post.updated_at.day.ordinalize}, %Y %I:%M%p") if post.updated_at != post.created_at %></i><br><br>
-          <% message = truncate(post.content, length: 200) %>
-          <span class="post_content"><%= markdown(message) %></span><br/>
+          <span class="post_content"><%= markdown(truncate(post.content, length: 400)) %></span><br/>
           <%= link_to "Read More", post, class: "btn" %>
           <br/>
           <%= social_share_button_tag(post.title, url: post_url(post), popup: true) %>
