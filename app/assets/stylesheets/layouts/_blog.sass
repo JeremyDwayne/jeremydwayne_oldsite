@@ -1,23 +1,21 @@
 .post_list 
-  margin: -20px auto auto auto
-  padding: 1em 1em
-  background: $main
   min-height: calc(100vh - 580px)
+  margin: -20px auto auto auto
+  padding-top: 1em
+  padding-bottom: 1em
+  background: $main
   a
-    margin: .5%
-    +media($mobile)
-      margin: 2%
-
+    margin-top: 2%
 
 .post_row
   @extend .wrapper
   .post
+    margin-bottom: 2em
     +media($mobile)
-      margin: 2%
       min-height: 35em
+    +media($tablet)
+      min-height: 10em
     padding: 2em
-    margin: .5%
-    min-height: 10em
     height: 100%
     background: white
     border-radius: 2px
@@ -25,11 +23,12 @@
     box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12)
     position: relative
     span.post_title
-      font-size: 1.5em
       font-weight: 700
       color: $highlight
       +media($mobile)
         font-size: 1.2em
+      +media($tablet)
+        font-size: 1.5em
       a
         text-decoration: none
         color: $highlight
