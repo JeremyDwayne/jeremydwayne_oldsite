@@ -10,13 +10,16 @@
 .post_row
   @extend .wrapper
   .post
-    margin-bottom: 2em
+    margin-top: 2em
     +media($mobile)
       min-height: 35em
     +media($tablet)
       min-height: 10em
-    padding: 2em
+    +media($desktop)
+      min-height: 10em
     height: 100%
+    padding: 2em
+    padding-bottom: 2em
     background: white
     border-radius: 2px
     border: none

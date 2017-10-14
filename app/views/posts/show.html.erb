@@ -1,20 +1,15 @@
 <section class="post_list">
-  <div class="wrapper">
-    <div class="post_row">
-      <div class="post">
-        <div id="post_image"><h2><%= @post.title %></h2></div>
-
-        <p>
-        <%= markdown(@post.content) %>
-        </p>
-        <br/>
-        Share: <%= social_share_button_tag(@post.title, url: post_url(@post), popup: true) %>
-        <br/>
-        <%= link_if_admin 'Edit |', edit_post_path(@post) %>
-        <%= link_to 'Back', posts_path %>
-        <hr>
-        <%= render 'disqus' %>
-      </div>
+  <div class="post_row">
+    <div class="post">
+      <span class="post_title"><%= link_to @post.title, @post %></span><br/>
+      <%= markdown(@post.content) %>
+      <br/>
+      Share: <%= social_share_button_tag(@post.title, url: post_url(@post), popup: true) %>
+    <br/>
+    <%= link_if_admin 'Edit |', edit_post_path(@post) %>
+    <%= link_to 'Back', posts_path %>
+    <hr>
+    <%= render 'disqus' %>
     </div>
   </div>
 </section>
