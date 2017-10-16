@@ -1,6 +1,6 @@
 <section class="post_list">
     <div class="post_row">
-      <%= link_if_admin 'New Post', new_post_path, "btn" %>
+      <%= link_if_admin 'New Post', new_post_path, "button" %>
       <br/>
       <br/>
       <% @posts.each do |post| %>
@@ -13,7 +13,7 @@
 
           <i class="post_date"><%= post.created_at.strftime("%b #{post.created_at.day.ordinalize}, %Y %I:%M%p") %><%= " | Updated At: " + post.updated_at.strftime("%b #{post.updated_at.day.ordinalize}, %Y %I:%M%p") if post.updated_at != post.created_at %></i><br><br>
           <span class="post_content"><%= markdown(truncate(post.content, length: 400)) %></span><br/>
-          <%= link_to "Read More", post, class: "btn" %>
+          <%= link_to "Read More", post, class: "button" %>
           <br/>
           <%= social_share_button_tag(post.title, url: post_url(post), popup: true) %>
         </div>

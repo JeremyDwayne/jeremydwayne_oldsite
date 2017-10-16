@@ -1,0 +1,13 @@
+{
+  "name": "jeremydwayne",
+  "version": "1.0.0",
+  "description": "Personal blog and resume",
+  "main": "public/index.html",
+  "repository": "git@github.com:JeremyDwayne/jeremydwayne.git",
+  "author": "Jeremy Winterberg <winterjd@uwec.edu>",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "bulma": "^0.6.0"
+  }
+}

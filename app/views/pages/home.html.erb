@@ -3,13 +3,13 @@
     <div class="col">
       <h3>Blog</h3>
       <p>Occasionally I surprise everyone with thoughts actually worth sharing. Follow my blog if you somehow think I'm interesting!</p>
-      <%= link_to "All Articles", posts_path, class: "btn" %>
+      <%= link_to "All Articles", posts_path, class: "button" %>
     </div>
 
     <div class="col">
       <h3>Portfolio</h3>
       <p>I'm always working on side projects and the occasional freelance gig. When I do something worth sharing (that I'm able to), you'll find it in my portfolio.</p>
-      <%= link_to "All Projects", projects_path, class: "btn" %>
+      <%= link_to "All Projects", projects_path, class: "button" %>
     </div>
 
     <div class="col">
@@ -36,14 +36,14 @@
     <p>If you're interested in hiring me, please checkout my resume and portfolio!</p>
     <p>Stick around and follow my journey!</p>
     <p><b>Jeremy Winterberg</b></p>
-    <%= link_to "Learn More", resume_path, class: "btn" %>
+    <%= link_to "Learn More", resume_path, class: "button" %>
 </section>
 
 <section id="email_subscribe">
   <div class="wrapper">
     <h2>Mailing List</h4>
     <p>Join my mailing list for notifications of cool videos, articles, and.. who am I kidding, you dont want to sign up for this.</p>
-    <%# <input type="text" name="name" placeholder="Your Name">&nbsp;<input type="email" name="email" placeholder="Email Address">&nbsp;<input type="submit" value="Submit" class="btn"> %>
+    <%# <input type="text" name="name" placeholder="Your Name">&nbsp;<input type="email" name="email" placeholder="Email Address">&nbsp;<input type="submit" value="Submit" class="button"> %>
     <%= render 'newsletter_form' %>
   </div>
 </section>

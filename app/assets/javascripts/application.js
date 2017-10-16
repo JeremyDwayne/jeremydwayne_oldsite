@@ -2,7 +2,6 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require social-share-button
-//= require showdown
 //= require_tree .
 
 // Not Used With SimpleMDE
@@ -23,5 +22,5 @@ $(document).on("turbolinks:load", function() {
     $('#main_nav').toggleClass('active');
   });
 
-  var simplemde = new SimpleMDE({ element: document.getElementById("content") });
+  // var simplemde = new SimpleMDE({ element: document.getElementById("content") });
 });
