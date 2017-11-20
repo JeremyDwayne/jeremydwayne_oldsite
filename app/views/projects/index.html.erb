@@ -1,8 +1,9 @@
 <section class="portfolio_list">
   <div class="portfolio_row">
     <%= link_if_admin 'New Project', new_project_path, "btn" %>
-    <br/>
-    <br/>
+    <%= form_for :project, method: 'get' do |f| %>  
+      <%= f.text_field :search, placeholder: "search", style: "width: 33%;" %>  
+    <% end %>  
     <% @projects.each do |project| %>
       <div class="project">
         <%# <div style="background-image: url(bannerimg.jpg)" class="project_image"> %>
