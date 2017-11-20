@@ -24,7 +24,11 @@ gem 'social-share-button'
 gem 'figaro'
 gem "paperclip", "~> 5.0.0"
 
+gem 'dynamic_search'
+
 group :development, :test do
+  gem 'rspec-rails'
+  gem 'capybara'
   gem 'sqlite3'
   gem 'byebug', platform: :mri
 end
