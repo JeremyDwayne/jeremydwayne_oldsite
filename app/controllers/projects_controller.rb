@@ -4,7 +4,7 @@ class ProjectsController < ApplicationController
   # GET /projects
   # GET /projects.json
   def index
-    @projects = Project.search(params[:project].present? ? params[:project][:search] : nil).order("created_at DESC").page(params[:page]).per(5)
+    @projects = Project.search(params.to_json.include?('search') ? params[:project][:search] : nil).order("created_at DESC").page(params[:page]).per(5)
   end
 
   # GET /projects/1
