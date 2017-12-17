@@ -1,69 +1,77 @@
 <div class="resume">
   <div class="resume-container">
     <img src="https://secure.gravatar.com/avatar/8e21b254d7c82fdce3286a21345dd3c4?s=150"></img>
-    <p>
-    <h4>Jeremy Winterberg</h4>
-    Eau Claire, WI<br>
-    Email: <a href="mailto:jeremy@jeremydwayne.com">jeremy@jeremydwayne.com</a><br>
-    <a href="http://www.github.com/jeremydwayne" target="_blank"><i class="fa fa-2x fa-github"></i></a>&nbsp;<a href="https://www.linkedin.com/in/jeremywinterberg" target="_blank"><i class="fa fa-2x fa-linkedin"></i></a>&nbsp;<a href="http://www.twitter.com/jeremydwayne" target="_blank"><i class="fa fa-2x fa-twitter"></i></a>&nbsp;<a href="http://www.instagram.com/jeremydwayne" target="_blank"><i class="fa fa-2x fa-instagram"></i></a>&nbsp;<a href="http://www.twitch.tv/jeremydwayne" target="_blank"><i class="fa fa-2x fa-twitch"></i></a>&nbsp;<a href="http://www.youtube.com/jeremydwayne" target="_blank"><i class="fa fa-2x fa-youtube"></i></a>
-    </p>
+      <h4><%= @resume['contact']['name'] %></h4>
+      <span class="resume_url"><%= markdown(@resume['contact']['email']) %></span>
+      <span class="resume_url"><%= markdown(@resume['contact']['github']) %></span>
+      <span class="resume_url"><%= markdown(@resume['contact']['linkedin']) %></span>
     <br/>
-    <h5>Education</h5>
-    <p><strong>University of Wisconsin Eau Claire</strong> (Dec 2017)
-      <br /><strong>Major</strong>: B.S. Computer Science, Software Engineering
-      <br /><strong>Minor</strong>: Economics, Liberal Arts</p>
 
-    <h5>Skills</h5>
-    <div class="skills">
-            <b>Languages:</b> <span>C, C++, Ruby, Java, Bash</span>
-      <br /><b>Web:</b> <span>Rails, HTML, CSS, Javascript/Jquery, Ajax</span>
-      <br /><b>Editors:</b> <span>Vim, Visual Studio, Eclipse, IntelliJ IDEA</span>
-      <br /><b>Database:</b> <span>Oracle SQL, MySql, msSQL, PostgreSQL</span>
-      <br /><b>Operating Systems:</b> <span>Linux, Windows, macOS</span>
-      <br /><b>Miscellaneous:</b> <span>Git, Linux Server Management, Adobe Premiere Pro & Photoshop</span>
-    </div>
-    <br />
-    <br />
-
-    <h5>Recent Experience</h5>
-    <p><b>June 2015–Current:</b> Ruby on Rails Developer, UW Eau Claire.</p>
-    <p>Interacted  with  clients  to  develop  and  deploy  web  applications  to  solve  real  workflow  issues  at  the  university.</p>
-    <div class="tabbed">
+    <h5>Work Experience</h5>
+    <% @resume['work'].each do |job| %>
       <p>
-        <strong>Education Department</strong> - Teacher Education Program
-        <br />
-        <div class="tabbed">
-          <li>Finished existing application which assists in the student teacher certification process with the Wisconsin Department of Education</li>
-          <li>Created a replacement application which supports hosting schools, professors, and students to interact with the application. This allows them to control their own data, see what stage a teacher or student is in the process, and drastically reduces manual data entry.</li>
+        <div style="float: left;">
+          <b><%= job['employer'] %></b></br>
+          <u><%= job['title'] %></u>
+        </div>
+        <div style="float: right;">
+          <%= job['where'] %></br>
+          <%= job['dates'] %>
         </div>
       </p>
+      <br/> <br/>
       <p>
-        <strong>Learning & Technology Services</strong>
-        <br />
-        <div class="tabbed">
-          <li>Redesigned their application to improve user experience. The new application allows students and faculty to sign up for workshops to continue their education.</li>
-        </div>
+        <% job['fluff'].each do |fluff| %>
+          <li class="tabbed"><%= fluff %></br></li>
+        <% end %>
       </p>
-    </div>
-    <p><small>Prior work experience includes various part time, minimum wage, non-programming positions dating back to when I was 15. If you're a potential employer and wish to hear about these, I'd be more than happy to provide the specifics.</small></p>
+  <% end %>
+  &nbsp;
+    </br>
 
-    <h5>Events</h5>
-    <p>
-      <strong>ACM International Collegiate Programming Contest</strong> 2015, 2016
-      <br />
-      Teams came together to compete through solving algorithm challenges quickly. Tested contestants' ability to work as a small team, their knowledge of algorithms, and their resourcefulness under a time limit.
-    </p>
-    <p>
-      <strong>Startup48</strong> 2016
-      <br />
-      48-hour competition to create an MVP (Minimally Viable Product) with a group of strangers to pitch to local business leaders for a chance to persue it.
-      <div class="tabbed">
-        <li>Created a mock-up for an app that local food businesses could adopt to accept online orders for delivery or pick-up.</li> 
-      </div>
-    </p>
+  <h5>Projects</h5>
+  <p>
+    <% @resume['projects'].each do |project| %>
+      <li class="tabbed"><%= markdown(project) %></li>
+    <% end %>
+  </p>
+  &nbsp;
+  </br>
 
-    <h5>Leadership Experience</h5>
-    <p><b>Spring 2016:</b> Acted as the lead developer, of a 34 person team, on a project for our Software Engineering course. We used an agile approach in creating a solution for the geology department. My main responsibilities included developing the infrastructure for the application, managing the git repository, and directing teams in what they needed to work on. Received an A in the class.</p>
-    <p><b>2009–2015:</b> Volunteer Lead Sound Engineer, Wesleyan Church, Eau Claire, WI. I made technology purchasing decisions and maintained sound equipment. Regularly performed live sound mixing and recording. Created a manual to streamline the training process of new sound engineers. Managed the scheduling of six volunteers across multiple services throughout each week.</p>
+  <h5>Technical Knowledge</h5>
+  <p>
+    <% @resume['technical'].each do |skill| %>
+      <li class="tabbed"><%= markdown(skill) %></li>
+    <% end %>
+  </p>
+  &nbsp;
+  </br>
+
+  <h5>Events</h5>
+  <% @resume['events'].each do |event| %>
+    <p>
+      <strong><%= event['name'] %></strong> <%= event['dates'] %>
+      <li class="tabbed"><%= event['description'] %></li>
+    </p>
+  <% end %>
+  &nbsp;
+  </br>
+
+  <h5>Education</h5>
+  <% @resume['education'].each do |edu| %>
+    <strong><%= edu['school'] %></strong> 
+    <%= edu['dates'] %>
+    <% edu['degree'].each do |degree, value| %>
+      <br/><strong class="tabbed"><%= degree.capitalize %></strong>: <%= value %>
+    <% end %>
+  <% end %>
+  &nbsp;
+  </br>
+  </br>
+
+  <% @resume['notes'].each do |note| %>
+    <small><i><%= note %></i></small></br>
+  <% end %>
+
   </div>
 </div>

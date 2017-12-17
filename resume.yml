@@ -1,0 +1,55 @@
+contact: 
+  name: 'Jeremy Winterberg'
+  phone: '(715) 225-6816'
+  email: '[jeremy@jeremydwayne.com](mailto:jeremy@jeremydwayne.com)'
+  address: '2606 Pineview Road, Eau Claire, WI 54703'
+  github: '[github.com/jeremydwayne](https://github.com/jeremydwayne)'
+  linkedin: '[linkedin.com/in/jeremywinterberg](https://www.linkedin.com/in/jeremywinterberg)'
+
+work:
+  - employer: 'University of Wisconsin - Eau Claire'
+    title: 'Ruby on Rails Developer'
+    where: 'Eau Claire, WI'
+    dates: 'May 2015 - Current'
+    fluff:
+      - 'Created several automation features for clients which translated directly to significant workflow improvement.'
+      - 'Finished application for Teacher Education Program which assists in the certification process for hundreds of student teachers a year.'
+      - 'Rewrote existing application for Learning and Technology Services which allows students and faculty to sign up for further education through workshops.'
+      - 'Maintained over 180 legacy applications'
+  - employer: 'Freelance'
+    title: 'Full Stack Engineer'
+    dates: 'Oct 2017 - Current'
+    fluff:
+      - 'Client: Pyxl. Updated rails application with several javascript features.'
+
+projects:
+  - '[jeremydwayne.com](https://www.jeremydwayne.com): Personal blog written in Ruby on Rails. Provided experience creating an app from mockups to production deployment.'
+  - '[DynamicSearch](https://www.github.com/jeremydwayne/dynamic_search): Ruby Gem which provides advanced string search functionality to ruby models.'
+  - '[Runescape API Wrapper](https://www.github.com/jeremydwayne/runescape-api): Ruby Gem which wraps common functionality in the Runescape API into easy to use ruby functions.'
+
+technical:
+  - 'Ruby & Ruby on Rails: Significant experience developing scripts and web applications'
+  - 'Javascript: Frequently used to add UX improving features to applications. Basic knowledge of Angular framework.'
+  - 'C/C++: Languages of choice in university'
+  - 'Java: Primary language used for first 2 years in university'
+  - 'Databases: Frequently used PostgreSQL, MySQL, msSQL, and Oracle SQL in web applications and throughout university'
+  - 'Tools: Proficient with Vim, Git'
+  - 'Concepts: Test Driven Development, Agile Workflow'
+
+education:
+  - school: 'University of Wisconsin - Eau Claire'
+    dates: 'Fall 2014 - Fall 2017'
+    degree: 
+      major: 'Bachelor of Science - Computer Science: Software Engineering'
+      minor: 'Economics, Liberal Arts'
+
+events:
+  - name: 'ACM International Collegiate Programming Contest'
+    dates: '2015, 2016'
+    description: 'Teams came together to compete through solving algorithm challenges quickly. Tested ability to work as a small team, their knowledge of algorithms, and their resourcefulness under a time limit.' 
+  - name: 'Startup48'
+    dates: '2016'
+    description: '48-hour competition to create a MVP (Minimally Viable Product) to pitch to local business leaders for a chance to persue it.'
+
+notes:
+  - 'I am willing to relocate, and references are available upon request'

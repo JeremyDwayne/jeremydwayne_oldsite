@@ -4,6 +4,7 @@ class PagesController < ApplicationController
   end
 
   def resume
+    @resume = YAML.load(File.read('resume.yml'))
   end
 
 end
