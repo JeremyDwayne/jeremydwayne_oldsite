@@ -28,7 +28,11 @@ module ApplicationHelper
       :superscript => true
     }
     markdown_to_html = Redcarpet::Markdown.new(coderayified, options)
-    markdown_to_html.render(text).html_safe
+    postprocess(markdown_to_html.render(text)).html_safe
+  end
+
+  def postprocess(full_document)
+    Regexp.new(/\A<p>(.*)<\/p>\Z/m).match(full_document)[1] rescue full_document
   end
 
   def link_if_admin(text, path, css="")

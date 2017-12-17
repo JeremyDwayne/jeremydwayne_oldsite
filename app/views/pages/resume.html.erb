@@ -1,58 +1,53 @@
 <div class="resume">
   <div class="resume-container">
-    <img src="https://secure.gravatar.com/avatar/8e21b254d7c82fdce3286a21345dd3c4?s=150"></img>
-      <h4><%= @resume['contact']['name'] %></h4>
-      <span class="resume_url"><%= markdown(@resume['contact']['email']) %></span>
-      <span class="resume_url"><%= markdown(@resume['contact']['github']) %></span>
-      <span class="resume_url"><%= markdown(@resume['contact']['linkedin']) %></span>
+      <img src="https://secure.gravatar.com/avatar/8e21b254d7c82fdce3286a21345dd3c4?s=150"></img>
+      <h3><%= @resume['contact']['name'] %> <small style="font-weight: 400; font-size: .65em;"><%= markdown(@resume['contact']['social_media']) %></small></h3> 
+      <hr style="margin-bottom: 0">
+      <div style="margin-top: 0">
+        <%= markdown(@resume['contact']['email']) %> |&nbsp;
+        <%= markdown(@resume['contact']['github']) %> |&nbsp;
+        <%= markdown(@resume['contact']['linkedin']) %>
+      </div>
+    <br/>
+    <br/>
+    <br/>
     <br/>
 
     <h5>Work Experience</h5>
     <% @resume['work'].each do |job| %>
-      <p>
-        <div style="float: left;">
-          <b><%= job['employer'] %></b></br>
-          <u><%= job['title'] %></u>
-        </div>
-        <div style="float: right;">
-          <%= job['where'] %></br>
-          <%= job['dates'] %>
-        </div>
-      </p>
+      <div style="float: left;">
+        <b><%= job['employer'] %></b></br>
+        <u><%= job['title'] %></u>
+      </div>
+      <div style="float: right;">
+        <%= job['where'] %></br>
+        <%= job['dates'] %>
+      </div>
       <br/> <br/>
-      <p>
-        <% job['fluff'].each do |fluff| %>
-          <li class="tabbed"><%= fluff %></br></li>
-        <% end %>
-      </p>
-  <% end %>
-  &nbsp;
+      <% job['fluff'].each do |fluff| %>
+        <li class="tabbed"><%= fluff %></br></li>
+      <% end %>
     </br>
+  <% end %>
 
   <h5>Projects</h5>
-  <p>
-    <% @resume['projects'].each do |project| %>
-      <li class="tabbed"><%= markdown(project) %></li>
-    <% end %>
-  </p>
+  <% @resume['projects'].each do |project| %>
+    <li class="tabbed"><%= markdown(project) %></li>
+  <% end %>
   &nbsp;
   </br>
 
   <h5>Technical Knowledge</h5>
-  <p>
-    <% @resume['technical'].each do |skill| %>
-      <li class="tabbed"><%= markdown(skill) %></li>
-    <% end %>
-  </p>
+  <% @resume['technical'].each do |skill| %>
+    <li class="tabbed"><%= skill %></li>
+  <% end %>
   &nbsp;
   </br>
 
   <h5>Events</h5>
   <% @resume['events'].each do |event| %>
-    <p>
       <strong><%= event['name'] %></strong> <%= event['dates'] %>
       <li class="tabbed"><%= event['description'] %></li>
-    </p>
   <% end %>
   &nbsp;
   </br>
