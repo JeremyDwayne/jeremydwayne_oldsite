@@ -6,6 +6,7 @@ gem 'pg', '~> 0.18'
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
 gem 'bower-rails', '~> 0.11.0'
+gem 'nokogiri', '~> 1.8.1'
 
 gem 'bourbon'
 gem 'neat'
