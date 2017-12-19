@@ -5,7 +5,7 @@ gem 'rails', '~> 5.1', '>= 5.1.3'
 gem 'pg', '~> 0.18'
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
-gem "bower-rails", "~> 0.11.0"
+gem 'bower-rails', '~> 0.11.0'
 
 gem 'bourbon'
 gem 'neat'
@@ -22,7 +22,9 @@ gem 'friendly_id', '~> 5.1'
 gem 'kaminari'
 gem 'social-share-button'
 gem 'figaro'
-gem "paperclip", "~> 5.0.0"
+gem 'paperclip', '~> 5.0.0'
+gem 'wicked_pdf'
+gem 'wkhtmltopdf-binary'
 
 gem 'dynamic_search'
 

@@ -1,0 +1,47 @@
+<h4>Work Experience</h4>
+<% @resume['work'].each do |job| %>
+  <div style="float: left;">
+    <u><%= job['employer'] %></u></br>
+    <%= job['title'] %>
+  </div>
+  <div style="float: right;">
+    <%= job['where'] %></br>
+    <%= job['dates'] %>
+  </div>
+  <br/> <br/>
+  <% job['fluff'].each do |fluff| %>
+    <li class="tabbed"><%= fluff %></br></li>
+  <% end %>
+<% end %>
+
+<h4>Projects</h4>
+<% @resume['projects'].each do |project| %>
+  <li class="tabbed"><%= markdown(project) %></li>
+<% end %>
+
+<h4>Technical Knowledge</h4>
+<% @resume['technical'].each do |skill| %>
+  <li class="tabbed"><%= skill %></li>
+<% end %>
+
+<h4>Events</h4>
+<% @resume['events'].each do |event| %>
+    <strong><%= event['name'] %></strong> <%= event['dates'] %>
+    <li class="tabbed"><%= event['description'] %></li>
+<% end %>
+
+<h4>Education</h4>
+<% @resume['education'].each do |edu| %>
+  <strong><%= edu['school'] %></strong> 
+  <%= edu['dates'] %>
+  <% edu['degree'].each do |degree, value| %>
+    <br/><strong class="tabbed"><%= degree.capitalize %></strong>: <%= value %>
+  <% end %>
+<% end %>
+&nbsp;
+</br>
+</br>
+
+<% @resume['notes'].each do |note| %>
+  <small><i><%= note %></i></small></br>
+<% end %>

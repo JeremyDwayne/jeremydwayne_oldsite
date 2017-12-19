@@ -1,0 +1,8 @@
+<h3><%= @resume['contact']['name'] %> <small style="font-weight: 400; font-size: .65em;"><%= markdown(@resume['contact']['social_media']) %></small></h3> 
+<hr style="margin-bottom: 0">
+<div style="margin-top: 0">
+  <%= markdown(@resume['contact']['email']) %> |&nbsp;
+  <%= markdown(@resume['contact']['github']) %> |&nbsp;
+  <%= markdown(@resume['contact']['linkedin']) %>
+</div>
+<%= render 'resume.html.erb' %>
