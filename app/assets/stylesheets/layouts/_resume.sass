@@ -3,10 +3,9 @@
   margin: -20px auto auto auto
   padding-top: 1em
   padding-bottom: 1em
-  background: $main
+  background: $primaryColor
 
   .resume-container
-    @extend .wrapper
     margin-top: 3em
     padding: 2em
     background: white
@@ -16,7 +15,7 @@
     li
       display: list-item
     h4
-      color: $main 
+      color: $primaryColor 
     .fa
       color: $highlight
       &:first-child
@@ -30,23 +29,6 @@
     img
       float: left
       padding: 0 1em 1em 0
-    .skills
-      +outer-container
-      +media($mobile)
-        b, strong
-          +span-columns(4)
-        span
-          +span-columns(4)
-      +media($tablet)
-        b, strong
-          +span-columns(8)
-        span
-          +span-columns(8)
-      +media($desktop)
-        b, strong
-          +span-columns(3)
-        span
-          +span-columns(8)
 
 .tabbed
   margin-left: 2em

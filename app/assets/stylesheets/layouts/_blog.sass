@@ -3,20 +3,14 @@
   margin: -20px auto auto auto
   padding-top: 1em
   padding-bottom: 1em
-  background: $main
+  background: $primaryColor
   a
     margin-top: 2%
 
 .post_row
-  @extend .wrapper
   .post
     margin-top: 2em
-    +media($mobile)
-      min-height: 35em
-    +media($tablet)
-      min-height: 10em
-    +media($desktop)
-      min-height: 10em
+    min-height: 10em
     height: 100%
     padding: 2em
     padding-bottom: 2em
@@ -28,10 +22,7 @@
     span.post_title
       font-weight: 700
       color: $highlight
-      +media($mobile)
-        font-size: 1.2em
-      +media($tablet)
-        font-size: 1.5em
+      font-size: 1.5em
       a
         text-decoration: none
         color: $highlight

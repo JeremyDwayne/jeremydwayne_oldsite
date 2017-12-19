@@ -3,18 +3,14 @@
   margin: -20px auto auto auto
   padding-top: 1em
   padding-bottom: 1em
-  background: $main
+  background: $primaryColor
   a
     margin-top: 2%
 
 .portfolio_row
-  @extend .wrapper
   .project
     margin-top: 2em
-    +media($mobile)
-      min-height: 35em
-    +media($tablet)
-      min-height: 10em
+    min-height: 10em
     padding: 2em
     height: 100%
     background: white
@@ -26,10 +22,7 @@
       font-size: 1.5em
       font-weight: 700
       color: $highlight
-      +media($mobile)
-        font-size: 1.2em
-      +media($tablet)
-        font-size: 1.5em
+      font-size: 1.5em
       a
         text-decoration: none
         color: $highlight

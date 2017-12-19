@@ -3,7 +3,7 @@
 //= require turbolinks
 //= require social-share-button
 //= require showdown
-//= require semantic-ui/dist/semantic
+//= require materialize
 //= require_tree .
 
 // Not Used With SimpleMDE
