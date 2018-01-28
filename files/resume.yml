@@ -8,6 +8,16 @@ contact:
   linkedin: '[linkedin.com/in/jeremywinterberg](https://www.linkedin.com/in/jeremywinterberg)'
 
 work:
+  - employer: 'Freelance'
+    title: 'Software Engineer'
+    dates: 'Oct 2017 - Current'
+    fluff:
+      - 'Building custom solutions for existing legacy applications, while designing new solutions to automate processes.'
+      - 'Frontend clientside form validation'
+      - 'User experience updates to Frontend UI'
+      - 'Backend API calls with Ajax'
+      - 'Backend unit testing'
+      - 'Caching to improve load times'
   - employer: 'University of Wisconsin - Eau Claire'
     title: 'Ruby on Rails Developer'
     where: 'Eau Claire, WI'
@@ -17,11 +27,6 @@ work:
       - 'Finished application for Teacher Education Program which assists in the certification process for hundreds of student teachers a year.'
       - 'Rewrote existing application for Learning and Technology Services which allows students and faculty to sign up for further education through workshops.'
       - 'Helped maintain over 180 web applications'
-  - employer: 'Freelance'
-    title: 'Full Stack Engineer'
-    dates: 'Oct 2017 - Current'
-    fluff:
-      - 'Client: Pyxl. Updated rails application with several javascript features.'
 
 projects:
   - '[jeremydwayne.com](https://www.jeremydwayne.com): Personal blog written in Ruby on Rails. Provided experience creating an app from mockups to production deployment.'
