@@ -1,6 +1,6 @@
 set :application, 'jeremydwayne' 
-set :ruby_version, "ruby-2.4.1"
-set :rvm_ruby_version, "ruby-2.4.1"
+set :ruby_version, "ruby-2.5.0"
+set :rvm_ruby_version, "ruby-2.5.0"
 set :repo_url, 'git@github.com:jeremydwayne/jeremydwayne.git'
 set :user, 'deploy'
 

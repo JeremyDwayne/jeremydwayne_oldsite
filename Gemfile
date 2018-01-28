@@ -25,7 +25,6 @@ gem 'social-share-button'
 gem 'figaro'
 gem 'paperclip', '~> 5.0.0'
 gem 'wicked_pdf'
-gem 'wkhtmltopdf-binary'
 
 gem 'dynamic_search'
 
@@ -42,6 +41,7 @@ group :development do
   gem 'listen', '~> 3.0.5'
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+  gem 'wkhtmltopdf-binary'
 
   gem 'capistrano', '3.8.2'
   gem 'rvm1-capistrano3', require: false
