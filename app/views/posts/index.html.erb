@@ -1,6 +1,6 @@
 <section class="post_list">
     <div class="post_row">
-      <%= link_if_admin 'New Post', new_post_path, "btn" %>
+      <%= link_if_admin 'New Post', new_post_path, "get", "btn" %>
       <%= form_for :post, method: 'get' do |f| %>  
         <%= f.text_field :search, placeholder: "search", style: "width: 33%;" %>  
       <% end %>  
