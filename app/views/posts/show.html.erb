@@ -7,6 +7,7 @@
       Share: <%= social_share_button_tag(@post.title, url: post_url(@post), popup: true) %>
     <br/>
     <%= link_if_admin 'Edit |', edit_post_path(@post) %>
+    <%= link_if_admin 'Delete |', post_path(@post), "delete" %>
     <%= link_to 'Back', posts_path %>
     <hr>
     <%= render 'disqus' %>

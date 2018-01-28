@@ -35,9 +35,9 @@ module ApplicationHelper
     Regexp.new(/\A<p>(.*)<\/p>\Z/m).match(full_document)[1] rescue full_document
   end
 
-  def link_if_admin(text, path, css="")
+  def link_if_admin(text, path, method="get", css="")
     if user_signed_in? && current_user.admin?
-      link_to text, path, class: css
+      link_to text, path, method: method, class: css
     end
   end
 
