@@ -10,7 +10,7 @@ gem 'nokogiri', '~> 1.8.1'
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
 gem 'turbolinks', '~> 5.0'
-gem 'materialize-sass'
+gem 'foundation-rails'
 
 gem 'jbuilder', '~> 2.0'
 gem 'coderay'

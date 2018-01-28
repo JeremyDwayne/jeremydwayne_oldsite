@@ -1,9 +1,9 @@
 //= require jquery
 //= require jquery_ujs
+//= require foundation
 //= require turbolinks
 //= require social-share-button
 //= require showdown
-//= require materialize
 //= require_tree .
 
 // Not Used With SimpleMDE
@@ -25,4 +25,5 @@ $(document).on("turbolinks:load", function() {
   });
 
   var simplemde = new SimpleMDE({ element: document.getElementById("content") });
+  $(document).foundation();
 });

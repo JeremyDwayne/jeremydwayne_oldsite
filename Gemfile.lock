@@ -97,6 +97,9 @@ GEM
     ffi (1.9.18)
     figaro (1.1.1)
       thor (~> 0.14)
+    foundation-rails (5.4.5.0)
+      railties (>= 3.1.0)
+      sass (>= 3.2.0)
     friendly_id (5.2.1)
       activerecord (>= 4.0.0)
     globalid (0.4.0)
@@ -130,8 +133,6 @@ GEM
       nokogiri (>= 1.5.9)
     mail (2.6.6)
       mime-types (>= 1.16, < 4)
-    materialize-sass (0.100.2)
-      sass (~> 3.3)
     method_source (0.8.2)
     mime-types (3.1)
       mime-types-data (~> 3.2015)
@@ -288,13 +289,13 @@ DEPENDENCIES
   devise
   dynamic_search
   figaro
+  foundation-rails
   friendly_id (~> 5.1)
   jbuilder (~> 2.0)
   jquery-rails
   jquery-ui-rails
   kaminari
   listen (~> 3.0.5)
-  materialize-sass
   nokogiri (~> 1.8.1)
   paperclip (~> 5.0.0)
   passenger
