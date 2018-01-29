@@ -77,7 +77,7 @@ class PostsController < ApplicationController
   end
 
   def feed
-    @blog_articles = post.all
+    @blog_articles = Post.all
     respond_to do |format|
       format.rss { render :layout => false }
     end
