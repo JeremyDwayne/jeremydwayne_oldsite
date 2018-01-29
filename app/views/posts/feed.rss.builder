@@ -18,10 +18,10 @@ xml.rss :version => "2.0" do
         end
         xml.author "Jeremy Winterberg"
         xml.pubDate article.created_at.to_s(:rfc822)
-        xml.link "https://www.jeremydwayne.com/blog/" + article.id.to_s + "-" + article.alias
+        xml.link "https://www.jeremydwayne.com/blog/" + article.slug
         xml.guid article.id
 
-        text = article.text
+        text = article.content
         xml.description "<p>" + text + "</p>"
 
       end
