@@ -5,4 +5,5 @@ Rails.application.routes.draw do
   resources :posts
   resources :users
   get 'resume', to: 'pages#resume'
+  get 'feed', to: 'posts#feed'
 end
